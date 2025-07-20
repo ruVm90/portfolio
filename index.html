@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rubén Vega - Backend Developer</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- biblioteca DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.0/dist/full.css" rel="stylesheet" />
+  <!-- biblioteca para animacion json -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.0/lottie.min.js"></script>
+  <!-- biblioteca para animacion de escritura -->
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+
+  <script src="script.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body class="relative">
+
+  <!-- Animación canvas de fondo -->
+  <canvas id="canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <div class="navbar fixed top-0 left-0 w-full z-20 backdrop-blur-sm">
+    <div class="navbar-start">
+      <a class="btn btn-ghost text-xl" href="#inicio">Rubén Vega</a>
+    </div>
+    <div class="navbar-end hidden lg:flex">
+      <ul class="menu menu-horizontal text-base font-semibold px-1">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#sobremi" class="nav-link">Sobre mí</a></li>
+        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Inicio -->
+  <section id="inicio" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
+    <div
+      class="max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 hero-content text-white">
+
+      <!-- Texto -->
+      <div class="flex-1 text-center lg:text-left">
+
+        <h1 class="text-6xl md:text-8xl font-bold mt-4 text-white leading-[1.4] fade-slide-up">
+          Rubén <span>Vega</span>
+        </h1>
+
+
+        <h2
+          class="text-3xl md:text-5xl font-semibold mt-2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-relaxed fade-slide-up">
+          Desarrollador Backend
+        </h2>
+
+
+        <p id="typing-text"
+          class="mt-4 text-2xl md:text-2xl min-h-[2rem] bg-gradient-to-r from-yellow-400 via-red-400 to-pink-500 bg-clip-text text-transparent fade-slide-up">
+        </p>
+
+
+        <p class="mt-5 text-gray-300 text-xl max-w-md mx-auto lg:mx-0 fade-slide-up">
+          Apasionado del desarrollo con PHP y Laravel. Enfocado en escribir código limpio, mantenible y eficiente.
+        </p>
+
+        <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6 fade-slide-up">
+          <span class="badge badge-outline">PHP</span>
+          <span class="badge badge-outline">Laravel</span>
+          <span class="badge badge-outline">MySQL</span>
+          <span class="badge badge-outline">Tailwind</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start fade-slide-up">
+          <a href="#proyectos"
+            class="btn btn-wide bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-700 hover:to-purple-600 text-white shadow-lg ">
+            Ver proyectos
+          </a>
+          <a href="#contacto"
+            class="btn btn-wide bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-green-500 text-white shadow-lg ">
+            Contáctame
+          </a>
+
+        </div>
+
+        <div class="flex gap-8 mt-8 justify-center lg:justify-start items-center fade-slide-up">
+          <a href="https://github.com/ruVm90" target="_blank"
+            class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-pink-400 hover:border-pink-400 transition duration-300">
+            <i class="fab fa-github text-2xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/rubenvega1890" target="_blank"
+            class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-blue-400 hover:border-blue-400 transition duration-300">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+          <a href="cv/Cv_2025.pdf" target="_blank" download
+            class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-yellow-400 hover:border-yellow-400 transition duration-300">
+            <i class="fas fa-file-arrow-down text-2xl"></i>
+          </a>
+        </div>
+
+
+      </div>
+      <div id="animacion-backend" class="w-full max-w-[600px] lg:max-w-[800px] aspect-square mx-auto fade-slide-up">
+      </div>
+
+    </div>
+    <div>
+
+    </div>
+  </section>
+  <!-- Sobre mi -->
+  <section id="sobremi" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
+    <div class="max-w-5xl w-full mx-auto flex flex-col gap-8 text-center lg:text-left fade-slide-up">
+
+      <h2
+        class="text-4xl md:text-5xl m-auto font-bold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+        Sobre mí
+      </h2>
+
+      <p class="text-xl text-gray-300 leading-relaxed">
+        Hola!! Soy Rubén Vega, desarrollador backend con formación en Desarrollo de Aplicaciones Web (DAW). <br>
+        Mi objetivo es crear soluciones eficientes y mantenibles.
+        Me especializo en PHP y Laravel, y disfruto trabajando en proyectos donde el código limpio y la lógica robusta
+        marcan la diferencia.
+      </p>
+
+      <p class="text-xl text-gray-300 leading-relaxed">
+        Además, soy una persona autodidacta y comprometida con el aprendizaje continuo para seguir creciendo como
+        profesional dentro del mundo del desarrollo web.
+      </p>
+
+      <!-- Botones encima de las cards -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-2">
+        <a href="cv/Cv_2025.pdf" target="_blank" download class="btn btn-outline btn-accent">
+          Descargar CV
+        </a>
+        <a href="#proyectos" class="btn btn-outline btn-secondary">
+          Ver proyectos
+        </a>
+      </div>
+
+      <!-- Cards -->
+      <div class="flex flex-col lg:flex-row gap-6 justify-center items-stretch mt-4">
+        <!-- Card 1 -->
+        <a href="#proyectos"
+          class="card bg-base-100 w-full lg:w-1/2 shadow-md transition-transform transform hover:scale-[1.02] hover:shadow-xl cursor-pointer">
+          <div class="card-body flex flex-col gap-4">
+
+            <!-- Icono + título -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i class="fas fa-code text-3xl text-primary"></i>
+                <h2 class="card-title text-lg lg:text-xl">Proyectos totales</h2>
+              </div>
+              <span class="text-3xl font-bold text-primary">1</span>
+            </div>
+
+            <!-- Descripción -->
+            <p class="text-gray-500">
+              Aquí puedes explorar los proyectos que he desarrollado como backend developer usando PHP y Laravel.
+            </p>
+
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="#proyectos"
+          class="card bg-base-100 w-full lg:w-1/2 shadow-md transition-transform transform hover:scale-[1.02] hover:shadow-xl cursor-pointer">
+          <div class="card-body flex flex-col gap-4">
+
+            <!-- Icono + título -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i class="fas fa-certificate text-3xl text-yellow-500"></i>
+                <h2 class="card-title text-lg lg:text-xl">Certificaciones</h2>
+              </div>
+              <span class="text-3xl font-bold text-yellow-500">5</span>
+            </div>
+
+            <!-- Descripción -->
+            <p class="text-gray-500">
+              Aquí encontrarás las certificaciones que he obtenido como parte de mi formación y aprendizaje continuo.
+            </p>
+
+          </div>
+        </a>
+
+
+      </div>
+  </section>
+  <!-- Portfolio -->
+  <section id="proyectos" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
+    <div class="max-w-6xl w-full mx-auto flex flex-col gap-10 text-center lg:text-left fade-slide-up">
+
+      <!-- Título -->
+      <h2
+        class="text-4xl md:text-5xl m-auto font-bold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+        Mis proyectos
+      </h2>
+
+      <!-- Introducción -->
+      <p class="text-xl text-gray-300 leading-relaxed text-center">
+        Aquí muestro algunos de mis proyectos como desarrollador backend, junto con certificaciones que reflejan mi
+        formación y dedicación al aprendizaje continuo.
+      </p>
+
+      <!-- Barra de pestañas personalizada -->
+      <div class="w-full max-w-6xl mx-auto mt-8 px-4">
+        <div id="tab-buttons" class="w-full max-w-6xl mx-auto mt-8 px-4">
+          <div id="tab-buttons"
+            class="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md p-4 flex justify-center gap-12 flex-wrap text-white text-lg font-semibold">
+
+            <!-- Proyectos -->
+            <div
+              class="tab-custom tab-active px-6 py-3 border-b-2 border-primary rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2  hover:border-b-2 hover:border-primary"
+              data-tab="proyectos">
+              <i class="fas fa-folder-open"></i>
+              <span>Proyectos</span>
+            </div>
+
+            <!-- Certificaciones -->
+            <div
+              class="tab-custom px-6 py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary"
+              data-tab="certificaciones">
+              <i class="fas fa-certificate"></i>
+              <span>Certificaciones</span>
+            </div>
+
+            <!-- Tecnologías -->
+            <div
+              class="tab-custom px-6 py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2  hover:border-b-2 hover:border-primary"
+              data-tab="tecnologias">
+              <i class="fas fa-code"></i>
+              <span>Tecnologías</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Contenedores de contenido -->
+        <div class="w-full max-w-6xl mx-auto mt-6 px-4">
+          <!-- Proyectos -->
+          <div id="tab-proyectos" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow duration-300">
+              <div class="card-body">
+
+                <!-- Imagen del proyecto -->
+                <figure class="rounded-xl overflow-hidden shadow-md">
+                  <img src="img/Proyectos/my_delicious_blog.png" alt="My Delicious Blog"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                </figure>
+                <!-- Título -->
+                <h2 class="card-title mt-5 text-2xl font-bold ">
+                  My Delicious Blog
+                </h2>
+
+                <!-- Descripción -->
+                <p class="mt-2 text-gray-300">
+                  Blog de recetas con login, autenticación y roles de usuario desarrollado con Laravel. Permite crear,
+                  editar y buscar recetas de forma intuitiva.
+                </p>
+
+                <!-- Botón -->
+                <div class="card-actions justify-end mt-4">
+                  <a href="proyectos/my-delicious-blog.html"
+                    class="btn btn-primary transition-transform duration-200 hover:scale-105">
+                    Ver detalles
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-arrow-right w-4 h-4">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contenedor del carrusel -->
+          <div id="tab-certificaciones" class="tab-content hidden mt-6">
+            <div class="relative bg-white/5 backdrop-blur-md rounded-xl shadow-md p-6 overflow-hidden">
+              <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-6 w-full">
+                <!-- Aquí JS inyectará las certificaciones -->
+              </div>
+            </div>
+            <!-- Botones de navegación -->
+            <button id="prev-btn" aria-label="Anterior"
+              class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-16 h-16 flex items-center justify-center shadow-lg z-10 transition-all duration-300 backdrop-blur-md hover:scale-105">
+              <i class="fas fa-chevron-left text-2xl md:text-3xl"></i>
+            </button>
+
+            <button id="next-btn" aria-label="Siguiente"
+              class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-16 h-16 flex items-center justify-center shadow-lg z-10 transition-all duration-300 backdrop-blur-md hover:scale-105">
+              <i class="fas fa-chevron-right text-2xl md:text-3xl"></i>
+            </button>
+
+          </div>
+
+          <!-- Modal que reutilizamos para todas las imágenes -->
+          <dialog id="cert-modal" class="modal">
+            <div class="modal-box w-full max-w-4xl p-4 bg-base-100">
+              <form method="dialog" class="flex justify-end mb-2">
+                <button class="btn btn-sm btn-circle btn-ghost text-xl">✕</button>
+              </form>
+              <img id="modal-img" src="" alt="Certificado ampliado"
+                class="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow" />
+            </div>
+          </dialog>
+
+
+
+
+        </div>
+      </div>
+
+      <!-- Contenido tecnologias -->
+      <div id="tab-tecnologias"
+        class="tab-content hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1100px] mx-auto">
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Contacto -->
+  <section id="contacto" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
+    <div class="max-w-5xl w-full mx-auto flex flex-col lg:flex-row gap-12 text-white">
+
+      <!-- Texto de contacto -->
+<div class="flex-1 max-w-md">
+  <h2
+    class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+    ¿Quieres ponerte en contacto?
+  </h2>
+  <p class="mb-6 text-lg text-gray-300">
+    Estoy abierto a nuevas oportunidades y proyectos interesantes. ¡No dudes en enviarme un mensaje!
+  </p>
+
+  <!-- Email -->
+  <p class="mb-4 flex items-center gap-2 text-gray-300">
+    <i class="fas fa-envelope text-primary"></i>
+    rvmorago90@gmail.com
+  </p>
+
+  <!-- Redes y CV -->
+  <div class="flex gap-4 mt-4">
+    <a href="https://github.com/ruVm90" target="_blank"
+      class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-pink-400 hover:border-pink-400 transition duration-300">
+      <i class="fab fa-github text-xl"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/rubenvega1890" target="_blank"
+      class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-blue-400 hover:border-blue-400 transition duration-300">
+      <i class="fab fa-linkedin text-xl"></i>
+    </a>
+    <a href="cv/Cv_2025.pdf" download
+      class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-yellow-400 hover:border-yellow-400 transition duration-300">
+      <i class="fas fa-file-arrow-down text-xl"></i>
+    </a>
+  </div>
+</div>
+
+
+      <!-- Formulario -->
+      <form class="flex-1 max-w-md bg-base-100 bg-opacity-10 rounded-lg p-6 shadow-lg" action="#" method="POST">
+        <div class="mb-4">
+          <label for="nombre" class="block mb-2 font-semibold">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required
+            class="w-full rounded-md border border-gray-600 bg-transparent px-3 py-2 text-white focus:outline-none focus:border-blue-500" />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block mb-2 font-semibold">Email</label>
+          <input type="email" id="email" name="email" required
+            class="w-full rounded-md border border-gray-600 bg-transparent px-3 py-2 text-white focus:outline-none focus:border-blue-500" />
+        </div>
+        <div class="mb-4">
+          <label for="mensaje" class="block mb-2 font-semibold">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required
+            class="w-full rounded-md border border-gray-600 bg-transparent px-3 py-2 text-white focus:outline-none focus:border-blue-500 resize-none"></textarea>
+        </div>
+        <button type="submit"
+          class="btn bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-green-500 text-white w-full font-semibold shadow-lg">
+          Enviar
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+
+
+
+</body>
+
+
+</html>
