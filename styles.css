@@ -17,6 +17,27 @@
  }
 
 
+.underline-bar {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #4ade80, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.group:hover .underline-bar {
+  transform: scaleX(1);
+}
+
+.active-link .underline-bar {
+  transform: scaleX(1);
+}
+
+
  .hero-content,
  .navbar {
    z-index: 1;

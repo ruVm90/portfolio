@@ -46,12 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const top = section.offsetTop;
     const height = section.offsetHeight;
-
-    if (scrollY >= top && scrollY < top + height) {
-      link.classList.add('underline', 'text-primary');
-    } else {
-      link.classList.remove('underline', 'text-primary');
-    }
   });
 
 
@@ -64,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const height = section.offsetHeight;
 
       if (scrollY >= top && scrollY < top + height) {
-        link.classList.add('underline', 'text-primary');
+        link.classList.add('active-link');
       } else {
-        link.classList.remove('underline', 'text-primary');
+        link.classList.remove('active-link');
       }
     });
   }
@@ -76,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Cargar la animacion de inicio
   lottie.loadAnimation({
-    container: document.getElementById('animacion-backend'), 
+    container: document.getElementById('animacion-backend'),
     renderer: 'svg',
     loop: true,
     autoplay: true,
@@ -118,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   elements.forEach(el => observer.observe(el));
+
 
 
   const tabs = document.querySelectorAll("#tab-buttons .tab-custom");
