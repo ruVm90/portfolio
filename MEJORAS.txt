@@ -1,0 +1,7 @@
+- Mostrar los proyectos como las certificaciones usando el script. (HECHO)
+- Mejorar los efectos slide up. (HECHO)
+- Mostrar la pestaña correspondiente cuando se pulsa.
+- Mejorar el navbar, darle color??
+- Poner traducción en ingles.
+- Hacer pagina de detalles del proyecto
+- Mejorar visibilidad de flechas de certificaciones

@@ -42,18 +42,30 @@
  .navbar {
    z-index: 1;
  }
+/* Estado inicial */
+.fade {
+  opacity: 0;
+}
 
- .fade-slide-up {
-   opacity: 0;
-   transform: translateY(50px);
-   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
- }
+/* Animaciones */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
- .fade-slide-up.show {
-   opacity: 1;
-   transform: translateY(0);
- }
+@keyframes fade-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
- .tab-active {
-   border-bottom-width: 2px;
- }
+@keyframes fade-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Clase que se añade cuando el elemento entra en pantalla */
+.fade.show {
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}

@@ -98,21 +98,22 @@ document.addEventListener("DOMContentLoaded", () => {
     .delete(26)
     .go();
 
-  const elements = document.querySelectorAll('.fade-slide-up');
+  const elements = document.querySelectorAll('.fade');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); // Solo animar una vez
-      }
-    });
-  }, {
-    threshold: 0.1
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const animation = el.dataset.animation || 'fade-up';
+      el.style.animationName = animation;
+      el.classList.add('show');
+    }
   });
+}, {
+  threshold: 0.1
+});
 
-  elements.forEach(el => observer.observe(el));
-
+elements.forEach(el => observer.observe(el));
 
 
   const tabs = document.querySelectorAll("#tab-buttons .tab-custom");
@@ -138,6 +139,119 @@ document.addEventListener("DOMContentLoaded", () => {
       tabContents[selected].classList.remove("hidden");
     });
   });
+
+  const proyects = [
+    {
+      titulo: "My Delicious Blog",
+      photo: "img/Proyectos/my_delicious_blog.png",
+      description: "Blog de recetas con login, autenticación y roles de usuario desarrollado con Laravel. Permite crear, editar y buscar recetas de forma intuitiva.",
+      link: "#",
+      lottie: false
+    },
+    {
+      titulo: "Próximamente",
+      photo: "img/Proyectos/Under_construction.json",
+      description: "Proyecto en desarrollo....",
+      link: "#",
+      lottie: true
+    }
+  ]
+
+  const tab_proyects = document.getElementById("tab-proyectos");
+  function crearBotonVerDetalles(url) {
+    const acciones = document.createElement("div");
+    acciones.className = "card-actions justify-end mt-4";
+
+    const enlace = document.createElement("a");
+    enlace.href = url;
+    enlace.className = "btn btn-primary transition-transform duration-200 hover:scale-105";
+
+    const texto = document.createTextNode("Ver detalles");
+    enlace.appendChild(texto);
+
+    // SVG
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "24");
+    svg.setAttribute("height", "24");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "2");
+    svg.setAttribute("stroke-linecap", "round");
+    svg.setAttribute("stroke-linejoin", "round");
+    svg.classList.add("lucide", "lucide-arrow-right", "w-4", "h-4");
+
+    const path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path1.setAttribute("d", "M5 12h14");
+
+    const path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path2.setAttribute("d", "m12 5 7 7-7 7");
+
+    svg.appendChild(path1);
+    svg.appendChild(path2);
+
+    enlace.appendChild(svg);
+    acciones.appendChild(enlace);
+
+    return acciones;
+  }
+
+
+  proyects.forEach(proyect => {
+    const card = document.createElement("div");
+    card.className = "card bg-base-100 shadow-md hover:shadow-xl transition-shadow duration-300";
+
+    const body = document.createElement("div");
+    body.className = "card-body";
+
+    const figure = document.createElement("figure");
+    figure.className = "rounded-xl overflow-hidden shadow-md group";
+
+    if (proyect.lottie) {
+      const animContainer = document.createElement("div");
+      animContainer.className = "w-full h-64"; // Altura personalizada
+      figure.appendChild(animContainer);
+
+      lottie.loadAnimation({
+        container: animContainer,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: proyect.photo // ruta al JSON
+      });
+
+    } else {
+      const img = document.createElement("img");
+      img.className = "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105";
+      img.src = proyect.photo;
+      img.alt = proyect.titulo;
+      figure.appendChild(img);
+    }
+
+
+    const h2 = document.createElement("h2");
+    h2.className = "card-title mt-5 text-2xl font-bold";
+    h2.textContent = proyect.titulo;
+
+    const p = document.createElement("p");
+    p.className = "mt-2 text-gray-300";
+    p.textContent = proyect.description;
+
+
+    // Construir card
+    body.appendChild(figure);
+    body.appendChild(h2);
+    body.appendChild(p);
+    if (proyect.link !== "#") {
+      const boton = crearBotonVerDetalles(proyect.link);
+
+      body.appendChild(boton);
+    }
+    card.appendChild(body);
+    tab_proyects.appendChild(card);
+  });
+
 
 
   const certificaciones = [
