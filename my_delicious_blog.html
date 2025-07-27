@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Deliciuos blog details</title>
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- biblioteca DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.0/dist/full.css" rel="stylesheet" />
+  <!-- biblioteca para animacion json -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.0/lottie.min.js"></script>
+  <!-- biblioteca para animacion de escritura -->
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+
+  <script src="script.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    .active-feature {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body class="relative bg-[#0f0c1c] text-white min-h-screen px-6 py-10">
+  <canvas id="canvas" class="absolute inset-0 z-0"></canvas>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <div class="mb-8">
+      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition">
+        <i class="fas fa-arrow-left"></i> Volver
+      </a>
+    </div>
+
+    <div class="grid lg:grid-cols-[1fr_1fr] gap-12 items-start">
+
+
+      <!-- Columna izquierda -->
+      <div>
+        <h1 class="text-5xl font-bold mb-4">My Delicious Blog</h1>
+        <p class="text-white/70 max-w-xl text-lg">
+          Blog de recetas delicioso, donde puedes publicar, editar y descubrir recetas fáciles y sabrosas.
+        </p>
+
+        <div class="mt-8 bg-white/5 rounded-2xl p-6">
+  <div class="grid grid-cols-2 gap-4">
+    <div class="bg-white/10 p-4 rounded-xl text-center">
+      <p class="text-4xl font-bold">4</p>
+      <p class="text-sm text-white/60">Tecnologías</p>
+    </div>
+    <div class="bg-white/10 p-4 rounded-xl text-center">
+      <p class="text-4xl font-bold">8</p>
+      <p class="text-sm text-white/60">Características</p>
+    </div>
+  </div>
+</div>
+
+
+        <div class="flex gap-4 mt-8 flex-wrap">
+          <a href="https://midemo.com" target="_blank"
+            class="btn bg-primary hover:bg-primary-focus text-white px-5 py-2 rounded-lg">
+            <i class="fas fa-eye mr-2"></i> Ver demo
+          </a>
+          <a href="https://github.com/ruVm90/my-delicious-blog" target="_blank"
+            class="btn border border-primary text-primary hover:bg-primary hover:text-white px-5 py-2 rounded-lg">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+
+        <div class="mt-10">
+          <h2 class="text-xl font-semibold mb-3">Tecnologías utilizadas</h2>
+          <div class="flex flex-wrap gap-4">
+            <span class="badge badge-outline border-primary text-primary px-3 py-1">Laravel</span>
+            <span class="badge badge-outline border-primary text-primary px-3 py-1">MySQL</span>
+            <span class="badge badge-outline border-primary text-primary px-3 py-1">TailwindCSS</span>
+            <span class="badge badge-outline border-primary text-primary px-3 py-1">AJAX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha -->
+      <div>
+        <div class="relative rounded-2xl overflow-hidden border mt-5 border-primary ring-2 ring-primary/50 group">
+          <img id="feature-img" src="img/Proyectos/my_delicious_blog_details/welcome.png" alt="My Delicious Blog"
+            class="w-full max-h-[450px] object-contain transition-transform duration-500 group-hover:scale-105" />
+        </div>
+
+
+        <div class="mt-10 bg-white/5 p-6 rounded-xl">
+          <h2 class="text-2xl font-semibold mb-5 flex items-center gap-2">
+            <i class="fas fa-star text-yellow-400"></i> Funcionalidades principales
+          </h2>
+          <ul class="list-disc pl-10 space-y-6 text-white/80" id="feature-list">
+            <li class="cursor-pointer hover:text-white transition" onclick="updateImage('crud')">
+              <i class="fas fa-check-circle text-green-400 mr-2"></i>
+              Gestión completa de recetas (CRUD) con Eloquent ORM y base de datos MySQL.
+            </li>
+            <li class="cursor-pointer hover:text-white transition" onclick="updateImage('auth')">
+              <i class="fas fa-user-lock text-pink-400 mr-2"></i>
+              Registro, login y protección de rutas mediante middleware para usuarios autenticados.
+            </li>
+            <li class="cursor-pointer hover:text-white transition" onclick="updateImage('image')">
+              <i class="fas fa-user-cog text-blue-400 mr-2"></i>
+              Gestión de roles y permisos para administración de categorías.
+            </li>
+            <li class="cursor-pointer hover:text-white transition" onclick="updateImage('image')">
+              <i class="fas fa-image text-blue-400 mr-2"></i>
+              Creación de recetas con subida de imágenes.
+            </li>
+            <li class="cursor-pointer hover:text-white transition" onclick="updateImage('fav')">
+              <i class="fas fa-search text-teal-400 mr-2"></i>
+              Buscador de recetas con resultados en tiempo real (AJAX).
+            </li>
+            <li class="cursor-pointer hover:text-white transition" onclick="updateImage('responsive')">
+              <i class="fas fa-mobile-alt text-purple-400 mr-2"></i>
+              Interfaz completamente responsive para todos los dispositivos.
+            </li>
+            <li class="cursor-pointer hover:text-white transition" onclick="updateImage('pagination')">
+              <i class="fas fa-list-ol text-orange-400 mr-2"></i>
+              Paginación de recetas para una navegación más cómoda y eficiente.
+            </li>
+            <li class="cursor-pointer hover:text-white transition" onclick="updateImage('seeder')">
+              <i class="fas fa-database text-cyan-400 mr-2"></i>
+              Uso de *seeders* para poblar la base de datos con datos de prueba.
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <script>
+      function updateImage(feature) {
+        const featureImg = document.getElementById('feature-img');
+
+        // Apaga la opacidad (fade out)
+        featureImg.classList.add('opacity-0');
+
+        // Espera a que termine la animación y cambia la imagen
+        setTimeout(() => {
+          featureImg.src = `img/Proyectos/my_delicious_blog_details/${feature}.png`;
+
+          // Espera un poco para que la imagen cargue y luego muestra (fade in)
+          featureImg.onload = () => {
+            featureImg.classList.remove('opacity-0');
+          };
+        }, 200);
+      }
+    </script>
+
+</body>
+
+
+
+
+</html>

@@ -78,25 +78,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  new TypeIt("#typing-text", {
-    speed: 100,
-    loop: true,
-    breakLines: false,
-    waitUntilVisible: true,
-  })
-    .type("Apasionado del backend.")
-    .pause(1000)
-    .delete(24)
-    .type("Fan de Laravel.")
-    .pause(1000)
-    .delete(17)
-    .type("Creador de APIs limpias.")
-    .pause(1500)
-    .delete(26)
-    .type("Listo para nuevos retos.")
-    .pause(1500)
-    .delete(26)
-    .go();
+new TypeIt("#typing-text", {
+  speed: 100,
+  loop: true,
+  breakLines: false,
+  waitUntilVisible: true,
+})
+  .type("Especializado en backend.")
+  .pause(1200)
+  .delete(26)
+  .type("Amante de Laravel y PHP.")
+  .pause(1200)
+  .delete(25)
+  .type("Diseñador de APIs eficientes.")
+  .pause(1500)
+  .delete(29)
+  .type("Siempre listo para nuevos desafíos.")
+  .pause(1600)
+  .delete(36)
+  .go();
 
   const elements = document.querySelectorAll('.fade');
 
@@ -145,13 +145,13 @@ elements.forEach(el => observer.observe(el));
       titulo: "My Delicious Blog",
       photo: "img/Proyectos/my_delicious_blog.png",
       description: "Blog de recetas con login, autenticación y roles de usuario desarrollado con Laravel. Permite crear, editar y buscar recetas de forma intuitiva.",
-      link: "#",
+      link: "my_delicious_blog.html",
       lottie: false
     },
     {
-      titulo: "Próximamente",
+      titulo: "Próximamente...",
       photo: "img/Proyectos/Under_construction.json",
-      description: "Proyecto en desarrollo....",
+      description: "Proyecto en desarrollo",
       link: "#",
       lottie: true
     }
