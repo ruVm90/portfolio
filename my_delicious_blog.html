@@ -17,7 +17,8 @@
   <!-- biblioteca para animacion de escritura -->
   <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 
-  <script src="script.js"></script>
+  <script src="js/canvas.js"></script>
+  
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -33,7 +34,7 @@
   <canvas id="canvas" class=" inset-0 w-full h-full z-0"></canvas>
   <div class="flex-1 relative z-10 max-w-7xl mx-auto w-full px-6 py-10">
     <div class="mb-8 mt-6 lg:mt-12">
-      <a href="index.html"
+      <a href="index.html" id="volver"
         class="group inline-flex items-center border-2 border-indigo-700 gap-2 text-sm text-white bg-white/10 hover:bg-white/20 transition px-4 py-2 rounded-lg font-medium shadow-sm">
         <i class="fas fa-arrow-left text-white transform transition duration-300 group-hover:-translate-x-1"></i>
         Volver
@@ -43,7 +44,7 @@
     <div class="grid lg:grid-cols-[0.9fr_1fr] gap-12 items-start">
       <!-- Columna izquierda -->
       <div>
-        <h1 class="text-5xl font-bold mb-4">My Delicious Blog</h1>
+        <h1 class="text-5xl font-bold mb-4 ">My Delicious Blog</h1>
         <div
           class="h-1 w-24 bg-gradient-to-r from-indigo-700 to-purple-600 rounded my-8 shadow-md shadow-indigo-500/40">
         </div>
@@ -53,7 +54,8 @@
         <div class="my-8 bg-white/5 rounded-2xl p-4">
           <div class="grid grid-cols-2 gap-6">
             <!-- Tecnologías -->
-            <div class="flex items-center bg-white/10 p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
+            <div
+              class="flex items-center bg-white/10 p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
               <img src="img/Proyectos/my_delicious_blog_details/technologies.png" alt="Icono tecnologías"
                 class="w-12 h-12 mr-4" />
               <div>
@@ -62,7 +64,8 @@
               </div>
             </div>
             <!-- Características principales -->
-           <div class="flex items-center bg-white/10 p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
+            <div
+              class="flex items-center bg-white/10 p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
               <img src="img/Proyectos/my_delicious_blog_details/features.png" alt="Icono características"
                 class="w-12 h-12 mr-4" />
               <div>
@@ -127,13 +130,18 @@
       </div>
       <!-- Columna derecha -->
       <div>
-        <!-- Imagen con borde degradado azul celeste -->
         <div class="border-2 border-indigo-700 p-[2px] rounded-2xl mt-5">
-          <div class="rounded-[15px] overflow-hidden bg-black">
+          <div class="rounded-[15px] overflow-hidden bg-transparent h-[280px] flex items-center justify-center">
             <img id="feature-img" src="img/Proyectos/my_delicious_blog_details/welcome.png" alt="My Delicious Blog"
-              class="w-full max-h-[450px] object-contain transition-transform duration-500 group-hover:scale-105" />
+              class="max-h-full max-w-full object-contain transition-opacity transition-transform duration-500 ease-in-out opacity-100 hover:scale-105" />
+
+
           </div>
         </div>
+
+
+
+
         <!-- Funcionalidades principales con borde degradado -->
         <div class="relative mt-10 rounded-xl p-[2px] border-2 border-indigo-700">
           <div class="bg-white/5 rounded-[11px] p-6">
@@ -149,27 +157,24 @@
                 <i class="fas fa-user-lock text-pink-400 mr-2"></i>
                 Registro, login y protección de rutas mediante middleware para usuarios autenticados.
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('image')">
+              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('roles')">
                 <i class="fas fa-user-cog text-blue-400 mr-2"></i>
                 Gestión de roles y permisos para administración de categorías.
               </li>
               <li class="cursor-pointer hover:text-white transition" onclick="updateImage('image')">
                 <i class="fas fa-image text-blue-400 mr-2"></i>
-                Creación de recetas con subida de imágenes.
+                Formulario de reación de recetas con subida de imágenes, y validacion antes de guardar en la base de
+                datos.
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('fav')">
+              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('buscador')">
                 <i class="fas fa-search text-teal-400 mr-2"></i>
-                Buscador de recetas con resultados en tiempo real (AJAX).
-              </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('responsive')">
-                <i class="fas fa-mobile-alt text-purple-400 mr-2"></i>
-                Interfaz completamente responsive para todos los dispositivos.
+                Buscador de recetas por coincidencias con resultados en tiempo real (AJAX).
               </li>
               <li class="cursor-pointer hover:text-white transition" onclick="updateImage('pagination')">
                 <i class="fas fa-list-ol text-orange-400 mr-2"></i>
                 Paginación de recetas para una navegación más cómoda y eficiente.
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('seeder')">
+              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('seeders')">
                 <i class="fas fa-database text-cyan-400 mr-2"></i>
                 Uso de *seeders* para poblar la base de datos con datos de prueba.
               </li>
@@ -201,19 +206,27 @@
     function updateImage(feature) {
       const featureImg = document.getElementById('feature-img');
 
-      // Apaga la opacidad (fade out)
+      // Desvanece suavemente
       featureImg.classList.add('opacity-0');
 
-      // Espera a que termine la animación y cambia la imagen
       setTimeout(() => {
         featureImg.src = `img/Proyectos/my_delicious_blog_details/${feature}.png`;
 
-        // Espera un poco para que la imagen cargue y luego muestra (fade in)
-        featureImg.onload = () => {
+        // Espera un poco antes de mostrar (fade-in)
+        setTimeout(() => {
           featureImg.classList.remove('opacity-0');
-        };
-      }, 200);
+        }, 100); // suficiente para que la transición ocurra
+      }, 200); // tiempo de desvanecimiento antes de cambiar
     }
+
+function volver(){
+  alert("Estamos volviendo");
+}
+let boton = document.getElementById("volver");
+boton.addEventListener("click" , volver);
+
+
+
   </script>
 
 </body>
