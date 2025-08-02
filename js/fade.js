@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, {
         threshold: 0.1
     });
+    window.addEventListener("load", () => {
+        document.querySelectorAll(".fade").forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.style.animationName = el.dataset.animation || 'fade-up';
+                el.classList.add("show");
+            }
+        });
+    });
 
     elements.forEach(el => observer.observe(el));
 })
