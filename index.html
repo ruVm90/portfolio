@@ -38,116 +38,130 @@
   <canvas id="canvas"></canvas>
 
   <!-- NAVBAR -->
-  <div class="navbar fixed top-0 left-0 w-full z-20  bg-transparent">
-    <div class="navbar-start">
+  <div class="navbar fixed top-0 left-0 w-full z-50 bg-transparent px-4 flex items-center">
+    <!-- Logo -->
+    <div class="navbar-start md:block">
       <a class="btn btn-ghost text-xl font-bold text-white" href="#inicio">Rubén Vega</a>
     </div>
 
     <!-- Desktop menu -->
-    <div class="navbar-end hidden lg:flex">
+    <div class="navbar-end hidden lg:flex ml-auto">
       <ul class="menu menu-horizontal text-base font-semibold px-1 space-x-4 text-white">
-        <li><a href="#inicio" class="relative nav-link group hover:bg-transparent">Inicio<span
-              class="underline-bar"></span></a></li>
-        <li><a href="#sobremi" class="relative nav-link group hover:bg-transparent">Sobre mí<span
-              class="underline-bar"></span></a></li>
-        <li><a href="#portfolio" class="relative nav-link group hover:bg-transparent">Portfolio<span
-              class="underline-bar"></span></a></li>
-        <li><a href="#contacto" class="relative nav-link group hover:bg-transparent">Contacto<span
-              class="underline-bar"></span></a></li>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobremi">Sobre mí</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
 
-    <!-- Mobile menu (hamburguesa) -->
-    <div class="navbar-end lg:hidden">
-      <div class="dropdown dropdown-end">
-        <button tabindex="0" class="btn btn-ghost text-white text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul tabindex="0"
-          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-base font-semibold text-gray-700">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobremi">Sobre mí</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
+    <!-- Mobile menu button -->
+    <div class="lg:hidden ml-auto">
+      <button id="menu-btn" class="btn btn-ghost text-white text-2xl z-50">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
+  </div>
 
+  <!-- Mobile menu panel -->
+  <div id="mobile-menu"
+    class="fixed top-16 left-0 w-full h-2/5 bg-black/50 backdrop-blur-md z-40 transform -translate-y-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8">
+    <!-- Close button -->
+    <button id="close-menu" class="absolute top-2 right-4 text-white text-3xl hover:text-yellow-300">&times;</button>
+
+    <a href="#inicio"
+      class="opacity-0 transform translate-y-4 hover:text-yellow-300 text-2xl font-bold transition-all duration-300">Inicio</a>
+    <a href="#sobremi"
+      class="opacity-0 transform translate-y-4 hover:text-yellow-300 text-2xl font-bold transition-all duration-300">Sobre
+      mí</a>
+    <a href="#portfolio"
+      class="opacity-0 transform translate-y-4 hover:text-yellow-300 text-2xl font-bold transition-all duration-300">Portfolio</a>
+    <a href="#contacto"
+      class="opacity-0 transform translate-y-4 hover:text-yellow-300 text-2xl font-bold transition-all duration-300">Contacto</a>
   </div>
 
 
-  <!-- Inicio -->
-  <section id="inicio" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
-    <div
-      class="max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 hero-content text-white">
+  <section id="inicio"
+         class="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center px-4 pt-12 md:pt-24 pb-16 bg-transparent">
+  <div class="max-w-7xl w-full mx-auto flex flex-col items-center text-white gap-6">
 
-      <div class="flex-1 text-center lg:text-left">
-        <h1 class="text-6xl md:text-8xl font-bold mt-4 text-white leading-[1.4] fade" data-animation="fade-up">
-          Rubén <span>Vega</span>
-        </h1>
-        <h2
-          class="text-3xl md:text-5xl font-semibold mt-2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-relaxed fade"
+    <!-- Texto principal -->
+    <div class="text-center lg:text-left w-full">
+      <!-- H1 solo en desktop -->
+      <h1 class="hidden md:block text-5xl md:text-6xl lg:text-8xl font-bold mt-4 leading-[1.4] fade"
           data-animation="fade-up">
-          Desarrollador Backend
-        </h2>
+        Rubén <span>Vega</span>
+      </h1>
 
-        <!-- Texto que se escribe y se borra dinamicamente -->
-        <p id="typing-text"
-          class="mt-4 text-2xl md:text-2xl min-h-[2rem] bg-gradient-to-r from-yellow-400 via-red-400 to-pink-500 bg-clip-text text-transparent fade"
+      <h2 class="text-4xl md:text-3xl lg:text-5xl font-semibold mt-2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-relaxed fade"
           data-animation="fade-up">
-        </p>
+        Desarrollador Backend
+      </h2>
 
-        <p class="mt-5 text-gray-300 text-xl max-w-md mx-auto lg:mx-0 fade" data-animation="fade-up">
-          Apasionado por el desarrollo web, con un enfoque sólido en el backend utilizando PHP y Laravel. Comprometido
-          con escribir código limpio, eficiente y fácil de mantener.
-        </p>
+      <p id="typing-text"
+         class="mt-4 text-xl md:text-2xl min-h-[2rem] bg-gradient-to-r from-yellow-400 via-red-400 to-pink-500 bg-clip-text text-transparent fade"
+         data-animation="fade-up">
+      </p>
 
+      <p class="mt-4 text-gray-300 text-lg md:text-xl max-w-full md:max-w-md mx-auto px-2 sm:px-0 fade" data-animation="fade-up">
+        Apasionado por el desarrollo web, con un enfoque sólido en backend utilizando PHP y Laravel. Código limpio,
+        eficiente y mantenible.
+      </p>
 
-        <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6 fade" data-animation="fade-up">
-          <span class="badge badge-outline">PHP</span>
-          <span class="badge badge-outline">Laravel</span>
-          <span class="badge badge-outline">MySQL</span>
-          <span class="badge badge-outline">Tailwind</span>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
-          <a href="#portfolio"
-            class="btn btn-wide bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white shadow-lg fade"
-            data-animation="fade-left">
-            Ver proyectos
-          </a>
-          <a href="#contacto"
-            class="btn btn-wide bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-green-500 text-white shadow-lg fade"
-            data-animation="fade-right">
-            Contáctame
-          </a>
-        </div>
-
-        <div class="flex gap-8 mt-8 justify-center lg:justify-start items-center">
-          <a href="https://github.com/ruVm90" target="_blank"
-            class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-pink-400 hover:border-pink-400 transition duration-300 fade"
-            data-animation="fade-left">
-            <i class="fab fa-github text-2xl"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/rubenvega1890" target="_blank"
-            class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-blue-400 hover:border-blue-400 transition duration-300 fade"
-            data-animation="fade-up">
-            <i class="fab fa-linkedin text-2xl"></i>
-          </a>
-          <a href="cv/Cv_2025.pdf" target="_blank" download
-            class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-yellow-400 hover:border-yellow-400 transition duration-300 fade"
-            data-animation="fade-right">
-            <i class="fas fa-file-arrow-down text-2xl"></i>
-          </a>
-        </div>
-      </div>
-      <!-- Animacion de laptop flotante -->
-      <div id="animacion-backend" class="w-full max-w-[600px] lg:max-w-[800px] aspect-square mx-auto fade"
-        data-animation="fade-right">
+      <!-- Badges -->
+      <div class="flex flex-wrap justify-center gap-3 mt-4 fade" data-animation="fade-up">
+        <span class="badge badge-outline">PHP</span>
+        <span class="badge badge-outline">Laravel</span>
+        <span class="badge badge-outline">MySQL</span>
+        <span class="badge badge-outline">Tailwind</span>
       </div>
     </div>
+
+    <!-- Botones horizontales en móvil -->
+    <div class="flex flex-row gap-4 justify-center w-full max-w-sm mt-4">
+      <a href="#portfolio"
+         class="btn w-1/2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white shadow-lg fade"
+         data-animation="fade-left">
+        Ver proyectos
+      </a>
+      <a href="#contacto"
+         class="btn w-1/2 bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-green-500 text-white shadow-lg fade"
+         data-animation="fade-right">
+        Contáctame
+      </a>
     </div>
-  </section>
+
+    <!-- Animación laptop debajo de los botones -->
+    <div id="animacion-backend"
+         class="w-full max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] aspect-square mx-auto mt-2 sm:mt-4 fade"
+         data-animation="fade-up">
+    </div>
+
+    <!-- Redes debajo de la animación -->
+    <div class="flex gap-6 mt-4 sm:mt-6 justify-center items-center">
+      <a href="https://github.com/ruVm90" target="_blank"
+         class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-pink-400 hover:border-pink-400 transition duration-300 fade"
+         data-animation="fade-left">
+        <i class="fab fa-github text-2xl"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/rubenvega1890" target="_blank"
+         class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-blue-400 hover:border-blue-400 transition duration-300 fade"
+         data-animation="fade-up">
+        <i class="fab fa-linkedin text-2xl"></i>
+      </a>
+      <a href="cv/Cv_2025.pdf" target="_blank" download
+         class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-yellow-400 hover:border-yellow-400 transition duration-300 fade"
+         data-animation="fade-right">
+        <i class="fas fa-file-arrow-down text-2xl"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
   <!-- Sobre mi -->
   <section id="sobremi" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
     <div class="max-w-5xl w-full mx-auto flex flex-col gap-8 text-center lg:text-left">
