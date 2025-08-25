@@ -1,118 +1,85 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Cargar la animación de laptop
-  lottie.loadAnimation({
-    container: document.getElementById('animacion-backend'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: "lottie/animacion_inicio.json"
-  });
-
-  // Links y secciones para scroll
-  const links = document.querySelectorAll('.nav-link');
-  const sections = [...links].map(link => document.querySelector(link.getAttribute('href')));
-
-  function setActiveLink() {
-    const scrollY = window.scrollY + window.innerHeight / 2;
-
-    links.forEach((link, index) => {
-      const section = sections[index];
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-
-      if (scrollY >= top && scrollY < top + height) {
-        link.classList.add('active-link');
-      } else {
-        link.classList.remove('active-link');
-      }
+    // Cargar la animacion de laptop
+    lottie.loadAnimation({
+        container: document.getElementById('animacion-backend'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: "lottie/animacion_inicio.json"
     });
-  }
 
-  window.addEventListener('scroll', setActiveLink);
-  window.addEventListener('load', setActiveLink);
+    const links = document.querySelectorAll('.nav-link');
+    // Obtengo todas las secciones navegables
+    const sections = [...links].map(link => document.querySelector(link.getAttribute('href')));
 
-  // Simulación de texto a máquina
-  new TypeIt("#typing-text", {
-    speed: 100,
-    loop: true,
-    breakLines: false,
-    waitUntilVisible: true,
-  })
-  .type("Especializado en backend.")
-  .pause(1200)
-  .delete(26)
-  .type("Amante de Laravel y PHP.")
-  .pause(1200)
-  .delete(25)
-  .type("Diseñador de APIs eficientes.")
-  .pause(1500)
-  .delete(29)
-  .type("Siempre listo para nuevos desafíos.")
-  .pause(1600)
-  .delete(36)
-  .go();
+    // Activa los enlaces segun la posicion del scroll
+    function setActiveLink() {
+        const scrollY = window.scrollY + window.innerHeight / 2;
 
-  // Control de pestañas activas
-  const tabs = document.querySelectorAll("#tab-buttons .tab-custom");
-  const tabContents = {
-    proyectos: document.getElementById("tab-proyectos"),
-    certificaciones: document.getElementById("tab-certificaciones"),
-    tecnologias: document.getElementById("tab-tecnologias"),
-  };
+        links.forEach((link, index) => {
+            const section = sections[index];
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("tab-active", "border-b-2", "border-primary"));
-      Object.values(tabContents).forEach(content => content.classList.add("hidden"));
-      tab.classList.add("tab-active", "border-b-2", "border-primary");
-      const selected = tab.dataset.tab;
-      tabContents[selected].classList.remove("hidden");
+            if (scrollY >= top && scrollY < top + height) {
+                link.classList.add('active-link');
+            } else {
+                link.classList.remove('active-link');
+            }
+        });
+    }
+
+    // Se ejecuta cada vez que se hace scroll
+    window.addEventListener('scroll', setActiveLink);
+    // Se ejecuta cada vez que se carga la pagina
+    window.addEventListener('load', setActiveLink);
+
+
+
+    // Simulacion de texto a maquina
+    new TypeIt("#typing-text", {
+        speed: 100,
+        loop: true,
+        breakLines: false,
+        waitUntilVisible: true,
+    })
+        .type("Especializado en backend.")
+        .pause(1200)
+        .delete(26)
+        .type("Amante de Laravel y PHP.")
+        .pause(1200)
+        .delete(25)
+        .type("Diseñador de APIs eficientes.")
+        .pause(1500)
+        .delete(29)
+        .type("Siempre listo para nuevos desafíos.")
+        .pause(1600)
+        .delete(36)
+        .go();
+
+    // Control de pestañas activas
+    const tabs = document.querySelectorAll("#tab-buttons .tab-custom");
+    const tabContents = {
+        proyectos: document.getElementById("tab-proyectos"),
+        certificaciones: document.getElementById("tab-certificaciones"),
+        tecnologias: document.getElementById("tab-tecnologias"),
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // Quitar clases activas de todas las pestañas
+            tabs.forEach(t => {
+                t.classList.remove("tab-active", "border-b-2", "border-primary");
+            });
+
+            // Ocultar todo el contenido
+            Object.values(tabContents).forEach(content => content.classList.add("hidden"));
+
+            // Activar la pestaña actual
+            tab.classList.add("tab-active", "border-b-2", "border-primary");
+            const selected = tab.dataset.tab;
+            tabContents[selected].classList.remove("hidden");
+        });
     });
-  });
-
-  // ----------- MENÚ MÓVIL -----------
-  const menuBtn = document.getElementById('menu-btn');
-  const closeBtn = document.getElementById('close-menu');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const linkss = mobileMenu.querySelectorAll('a');
-
-  function openMenu() {
-    mobileMenu.classList.remove('-translate-y-full');
-    linkss.forEach((link, i) => {
-      setTimeout(() => {
-        link.style.opacity = 1;
-        link.style.transform = 'translateY(0)';
-      }, i * 100);
-    });
-  }
-
-  function closeMenu() {
-    mobileMenu.classList.add('-translate-y-full');
-    linkss.forEach(link => {
-      link.style.opacity = 0;
-      link.style.transform = 'translateY(1rem)';
-    });
-  }
-
-  // Abrir menú
-  menuBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Evita que el click llegue al document
-    openMenu();
-  });
-
-  // Cerrar con botón X
-  closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    closeMenu();
-  });
-
-  // Evitar cierre al hacer click dentro del menú
-  mobileMenu.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-
-  // Cerrar al hacer click fuera del menú
-  document.addEventListener('click', closeMenu);
-
-});
+})
