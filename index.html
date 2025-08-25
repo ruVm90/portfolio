@@ -38,41 +38,45 @@
   <canvas id="canvas"></canvas>
 
   <!-- NAVBAR -->
-  <div class="navbar fixed top-0 left-0 w-full z-20  bg-transparent">
-    <div class="navbar-start">
+  <div class="navbar fixed top-0 left-0 w-full z-50 bg-transparent px-4 flex items-center">
+    <!-- Logo -->
+    <div class="navbar-start hidden md:block">
       <a class="btn btn-ghost text-xl font-bold text-white" href="#inicio">Rubén Vega</a>
     </div>
 
     <!-- Desktop menu -->
-    <div class="navbar-end hidden lg:flex">
+    <div class="navbar-end hidden lg:flex ml-auto">
       <ul class="menu menu-horizontal text-base font-semibold px-1 space-x-4 text-white">
-        <li><a href="#inicio" class="relative nav-link group hover:bg-transparent">Inicio<span
-              class="underline-bar"></span></a></li>
-        <li><a href="#sobremi" class="relative nav-link group hover:bg-transparent">Sobre mí<span
-              class="underline-bar"></span></a></li>
-        <li><a href="#portfolio" class="relative nav-link group hover:bg-transparent">Portfolio<span
-              class="underline-bar"></span></a></li>
-        <li><a href="#contacto" class="relative nav-link group hover:bg-transparent">Contacto<span
-              class="underline-bar"></span></a></li>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobremi">Sobre mí</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
 
-    <!-- Mobile menu (hamburguesa) -->
-    <div class="navbar-end lg:hidden">
-      <div class="dropdown dropdown-end">
-        <button tabindex="0" class="btn btn-ghost text-white text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul tabindex="0"
-          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-base font-semibold text-gray-700">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobremi">Sobre mí</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
+    <!-- Mobile menu button -->
+    <div class="lg:hidden ml-auto">
+      <button id="menu-btn" class="btn btn-ghost text-white text-2xl z-50">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
+  </div>
 
+  <!-- Mobile menu panel -->
+  <div id="mobile-menu"
+    class="fixed top-16 left-0 w-full h-2/5 bg-black/50 backdrop-blur-md z-40 transform -translate-y-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8">
+    <!-- Close button -->
+    <button id="close-menu" class="absolute top-2 right-4 text-white text-3xl hover:text-yellow-300">&times;</button>
+
+    <a href="#inicio"
+      class="opacity-0 transform translate-y-4 hover:text-yellow-300 text-2xl font-bold transition-all duration-300">Inicio</a>
+    <a href="#sobremi"
+      class="opacity-0 transform translate-y-4 hover:text-yellow-300 text-2xl font-bold transition-all duration-300">Sobre
+      mí</a>
+    <a href="#portfolio"
+      class="opacity-0 transform translate-y-4 hover:text-yellow-300 text-2xl font-bold transition-all duration-300">Portfolio</a>
+    <a href="#contacto"
+      class="opacity-0 transform translate-y-4 hover:text-yellow-300 text-2xl font-bold transition-all duration-300">Contacto</a>
   </div>
 
 
@@ -82,9 +86,11 @@
       class="max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 hero-content text-white">
 
       <div class="flex-1 text-center lg:text-left">
-        <h1 class="text-6xl md:text-8xl font-bold mt-4 text-white leading-[1.4] fade" data-animation="fade-up">
+        <h1 class="hidden md:block text-5xl md:text-6xl lg:text-8xl font-bold mt-4 leading-[1.4] fade"
+          data-animation="fade-up">
           Rubén <span>Vega</span>
         </h1>
+
         <h2
           class="text-3xl md:text-5xl font-semibold mt-2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-relaxed fade"
           data-animation="fade-up">
