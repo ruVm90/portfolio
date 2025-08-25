@@ -14,8 +14,6 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.0/dist/full.css" rel="stylesheet" />
   <!-- biblioteca para animacion json -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.0/lottie.min.js"></script>
-  <!-- biblioteca para animacion de escritura -->
-  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -46,19 +44,20 @@
         <p class="text-white/70 max-w-xl text-lg fade" data-animation="fade-up">
           Blog de recetas, donde el usuario puede publicar, editar y descubrir recetas fácilmente.
         </p>
-        <div class="my-8 bg-white/5 rounded-2xl p-4">
-          <div class="grid grid-cols-2 gap-6 fade" data-animation="fade-up">
-            <!-- Tecnologías -->
+        <!-- Numero de tecnologias y caracteristicas -->
+        <div class="my-8 bg-white/5 rounded-2xl p-4 fade " data-animation="fade-up">
+          <div class="grid grid-cols-2 gap-6 ">
+
             <div
               class="flex items-center bg-white/10 p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
               <img src="img/Proyectos/my_delicious_blog_details/technologies.png" alt="Icono tecnologías"
                 class="w-12 h-12 mr-4" />
               <div>
-                <p class="text-2xl font-bold">4</p>
+                <p class="text-2xl font-bold">5</p>
                 <p class="text-white/60 text-sm">Tecnologías</p>
               </div>
             </div>
-            <!-- Características principales -->
+
             <div
               class="flex items-center bg-white/10 p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
               <img src="img/Proyectos/my_delicious_blog_details/features.png" alt="Icono características"
@@ -73,24 +72,25 @@
         <div class="flex gap-4 my-8 flex-wrap">
           <!-- Botón demo -->
           <a href="https://midemo.com" target="_blank"
-            class="min-w-[150px] rounded-full font-medium uppercase tracking-wide flex items-center justify-center gap-2 bg-primary hover:bg-primary-focus text-white px-5 py-2 rounded-lg shadow transition fade"
+            class=" hidden [150px] rounded-full font-medium uppercase tracking-wide flex items-center justify-center gap-2 bg-primary hover:bg-primary-focus text-white px-5 py-2 rounded-lg shadow transition fade"
             data-animation="fade-left">
             <i class="fas fa-eye"></i> Ver demo
           </a>
           <!-- Botón GitHub -->
           <a href="https://github.com/ruVm90/delicius_blog" target="_blank"
             class="min-w-[150px] rounded-full font-medium uppercase tracking-wide flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary hover:text-white px-5 py-2 rounded-lg shadow transition fade"
-            data-animation="fade-right">
+            data-animation="fade-up">
             <i class="fab fa-github"></i> GitHub
           </a>
         </div>
+        <!-- Tecnologias -->
         <div class="mt-10 ">
           <h2 class="text-xl font-semibold my-10 flex items-center gap-2 text-white fade" data-animation="fade-up">
             <i class="fas fa-code text-primary"></i>
             Tecnologías utilizadas
           </h2>
           <div class="flex flex-wrap gap-4 fade" data-animation="fade-up">
-            <!-- Laravel -->
+
             <span
               class="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-sm shadow-sm">
               <span class="bg-primary/10 p-2 rounded-full">
@@ -98,7 +98,7 @@
               </span>
               Laravel
             </span>
-            <!-- MySQL -->
+
             <span
               class="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-sm shadow-sm">
               <span class="bg-primary/10 p-2 rounded-full">
@@ -106,7 +106,7 @@
               </span>
               MySQL
             </span>
-            <!-- TailwindCSS -->
+
             <span
               class="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-sm shadow-sm">
               <span class="bg-primary/10 p-2 rounded-full">
@@ -114,7 +114,15 @@
               </span>
               TailwindCSS
             </span>
-            <!-- AJAX -->
+
+            <span
+              class="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-sm shadow-sm">
+              <span class="bg-primary/10 p-2 rounded-full">
+                <i class="fa-brands fa-js text-xl"></i>
+              </span>
+              JavaScript
+            </span>
+
             <span
               class="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-sm shadow-sm">
               <span class="bg-primary/10 p-2 rounded-full">
@@ -127,18 +135,13 @@
       </div>
       <!-- Columna derecha -->
       <div>
-        <div class="relative w-[620px] h-[280px] border-2 border-indigo-600 rounded-2xl overflow-hidden bg-gray-900 fade" data-animation="fade-up">
+        <div
+          class="relative w-[620px] h-[280px] border-2 border-indigo-600 rounded-2xl overflow-hidden bg-gray-900 fade"
+          data-animation="fade-up">
           <img id="feature-img" src="img/Proyectos/my_delicious_blog_details/welcome.png"
             class="absolute inset-0 m-auto max-h-full max-w-full object-contain opacity-100 transition-opacity duration-500 ease-in-out" />
         </div>
-
-
-
-
-
-
-
-        <!-- Funcionalidades principales con borde degradado -->
+        <!-- Funcionalidades principales -->
         <div class="relative mt-10 rounded-xl p-[2px] border-2 border-indigo-700 fade" data-animation="fade-up">
           <div class="bg-white/5 rounded-[11px] p-6">
             <h2 class="text-2xl font-semibold mb-5 flex items-center gap-2">
@@ -180,6 +183,7 @@
       </div>
     </div>
   </div>
+  <!-- footer -->
   <footer class="bg-transparent border-t border-white/10 z-10 relative">
     <div
       class="max-w-6xl mx-auto px-6 py-8 flex flex-col items-center justify-center text-center text-gray-400 space-y-4">
@@ -198,7 +202,6 @@
       </div>
     </div>
   </footer>
-
 </body>
 
 </html>

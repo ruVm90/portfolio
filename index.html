@@ -37,7 +37,7 @@
   <canvas id="canvas"></canvas>
 
   <!-- NAVBAR -->
-  <div class="navbar fixed top-0 left-0 w-full z-20 backdrop-blur-sm bg-transparent">
+  <div class="navbar fixed top-0 left-0 w-full z-20  bg-transparent">
     <div class="navbar-start">
       <a class="btn btn-ghost text-xl font-bold text-white" href="#inicio">Rubén Vega</a>
     </div>
@@ -111,7 +111,7 @@
 
         <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
           <a href="#portfolio"
-            class="btn btn-wide bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-700 hover:to-purple-600 text-white shadow-lg fade"
+            class="btn btn-wide bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white shadow-lg fade"
             data-animation="fade-left">
             Ver proyectos
           </a>
@@ -333,75 +333,77 @@
 
   </section>
   <!-- Contacto -->
-  <section id="contacto" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
-    <div class="max-w-2xl w-full mx-auto flex flex-col gap-12 text-white">
+ <section id="contacto" class="min-h-screen flex items-center justify-center px-4 py-20">
+  <div class="max-w-4xl w-full text-white grid grid-cols-1 md:grid-cols-2 gap-10">
 
-      <!-- Texto de contacto -->
-      <div class="text-center">
-        <h2
-          class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent fade"
-          data-animation="fade-up">
-          ¿Quieres ponerte en contacto?
-        </h2>
-        <p class="mb-6 text-lg text-gray-300 fade" data-animation="fade-up">
-          Estoy abierto a nuevas oportunidades y proyectos interesantes. ¡No dudes en enviarme un mensaje!
-        </p>
+    <!-- Lado izquierdo: texto y redes -->
+    <div class="flex flex-col justify-center fade" data-animation="fade-left">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+        ¿Hablamos?<br />Estoy a solo un mensaje.
+      </h2>
+      <p class="text-lg text-gray-300 mb-6">
+        Me encanta conectar con personas con ideas, proyectos o simplemente con ganas de compartir. Si tienes algo en mente, estaré encantado de leerte. ¡Escríbeme!
+      </p>
 
-        <!-- Email destacado -->
-        <div class="flex justify-center">
-          <a href="mailto:rvmorago90@gmail.com"
-            class="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-purple-600 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 fade"
-            data-animation="fade-up">
-            rvmorago90@gmail.com
-          </a>
-        </div>
-
-        <!-- Redes y CV -->
-        <div class="flex justify-center gap-4 mt-4">
-          <a href="https://github.com/ruVm90" target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-pink-400 hover:border-pink-400 transition duration-300 fade"
-            data-animation="fade-left">
-            <i class="fab fa-github text-xl"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/rubenvega1890" target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-blue-400 hover:border-blue-400 transition duration-300 fade"
-            data-animation="fade-up">
-            <i class="fab fa-linkedin text-xl"></i>
-          </a>
-          <a href="cv/Cv_2025.pdf" download
-            class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:text-yellow-400 hover:border-yellow-400 transition duration-300 fade"
-            data-animation="fade-right">
-            <i class="fas fa-file-arrow-down text-xl"></i>
-          </a>
-        </div>
+      <!-- Email -->
+      <div class="flex items-center gap-3 mb-6">
+        <i class="fas fa-envelope text-xl text-blue-400"></i>
+        <a href="mailto:rvmorago90@gmail.com" class="hover:underline">rubenvega.dev@gmail.com</a>
       </div>
 
-      <!-- Formulario -->
-      <form class="bg-base-100 bg-opacity-10 rounded-lg p-6 shadow-lg fade" data-animation="fade-up" action="#"
-        method="POST">
-        <div class="mb-4">
-          <label for="nombre" class="block mb-2 font-semibold">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required
-            class="w-full rounded-md border border-gray-600 bg-transparent px-3 py-2 text-white focus:outline-none focus:border-blue-500" />
-        </div>
-        <div class="mb-4">
-          <label for="email" class="block mb-2 font-semibold">Email</label>
-          <input type="email" id="email" name="email" required
-            class="w-full rounded-md border border-gray-600 bg-transparent px-3 py-2 text-white focus:outline-none focus:border-blue-500" />
-        </div>
-        <div class="mb-4">
-          <label for="mensaje" class="block mb-2 font-semibold">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="5" required
-            class="w-full rounded-md border border-gray-600 bg-transparent px-3 py-2 text-white focus:outline-none focus:border-blue-500 resize-none"></textarea>
-        </div>
-        <button type="submit"
-          class="btn bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-green-500 text-white w-full font-semibold shadow-lg">
-          Enviar
-        </button>
-      </form>
-
+      <!-- Redes sociales -->
+      <div>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3">
+            <i class="fab fa-github text-2xl text-white"></i>
+            <a href="https://github.com/ruVm90" target="_blank" class="hover:underline">
+              Visita mi perfil en <span class="text-pink-400 font-semibold">GitHub</span>
+            </a>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fab fa-linkedin text-2xl text-white"></i>
+            <a href="https://www.linkedin.com/in/rubenvega1890" target="_blank" class="hover:underline">
+              Conecta conmigo en <span class="text-blue-400 font-semibold">LinkedIn</span>
+            </a>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fas fa-file-arrow-down text-2xl text-white"></i>
+            <a href="cv/Cv_2025.pdf" download class="hover:underline">
+              <span class="text-yellow-400 font-semibold">Descargar mi CV en PDF</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </section>
+
+    <!-- Lado derecho: formulario -->
+    <form action="#" method="POST"
+      class="bg-white/5 backdrop-blur-lg p-8 rounded-2xl shadow-2xl fade" data-animation="fade-right">
+      <div class="mb-4">
+        <label for="nombre" class="block text-sm font-semibold mb-1">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required
+          class="w-full bg-transparent border border-gray-500 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+        <input type="email" id="email" name="email" required
+          class="w-full bg-transparent border border-gray-500 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" />
+      </div>
+      <div class="mb-4">
+        <label for="mensaje" class="block text-sm font-semibold mb-1">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required
+          class="w-full bg-transparent border border-gray-500 px-4 py-2 rounded-md text-white placeholder-gray-400 resize-none focus:outline-none focus:border-blue-500"></textarea>
+      </div>
+      <button type="submit"
+        class="w-full py-3 bg-gradient-to-r from-green-500 to-blue-500 hover:from-blue-600 hover:to-green-600 rounded-lg font-semibold shadow-lg transition-transform hover:scale-105">
+        Enviar mensaje
+      </button>
+    </form>
+
+  </div>
+</section>
+
+
   <!-- Footer -->
   <footer class="mt-20 bg-transparent border-t border-white/10">
     <div

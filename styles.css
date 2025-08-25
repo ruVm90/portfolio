@@ -70,4 +70,11 @@
   animation-timing-function: ease-out;
 }
 
+.btn-primary svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
 
