@@ -240,115 +240,93 @@
       </div>
   </section>
   <!-- Portfolio -->
-  <section id="portfolio" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
-    <div class="max-w-6xl w-full mx-auto flex flex-col gap-10 text-center lg:text-left">
+<section id="portfolio" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
+  <div class="max-w-6xl w-full mx-auto flex flex-col gap-10 text-center lg:text-left">
 
-      <!-- Título -->
-      <h2
-        class="text-4xl md:text-5xl m-auto font-bold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent fade"
-        data-animation="fade-up">
-        Mis proyectos
-      </h2>
+    <!-- Título -->
+    <h2 class="text-4xl md:text-5xl m-auto font-bold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent fade" data-animation="fade-up">
+      Mis proyectos
+    </h2>
 
-      <!-- Introducción -->
-      <p class="text-xl text-gray-300 leading-relaxed text-center fade" data-animation="fade-up">
-        Aquí muestro algunos de mis proyectos como desarrollador backend, junto con certificaciones que reflejan mi
-        formación y dedicación al aprendizaje continuo.
-      </p>
+    <!-- Introducción -->
+    <p class="text-xl text-gray-300 leading-relaxed text-center fade" data-animation="fade-up">
+      Aquí muestro algunos de mis proyectos como desarrollador web y las certificaciones obtenidas.
+    </p>
 
-      <!-- Barra de pestañas personalizada -->
-      <div class="w-full max-w-6xl mx-auto mt-8 px-4 fade" data-animation="fade-up">
-        <div id="tab-buttons" class="w-full max-w-6xl mx-auto mt-8 px-4">
-          <div id="tab-buttons"
-            class="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md p-4 flex justify-center gap-12 flex-wrap text-white text-lg font-semibold">
+    <!-- Botones de pestañas -->
+    <div id="tab-buttons" class="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md p-2 sm:p-4 flex gap-4 sm:gap-12 overflow-x-auto sm:overflow-x-visible no-scrollbar text-white text-base sm:text-lg font-semibold sm:justify-center snap-x sm:snap-none">
 
-            <!-- Proyectos -->
-            <div
-              class="tab-custom tab-active px-6 py-3 border-b-2 border-primary rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2  hover:border-b-2 hover:border-primary"
-              data-tab="proyectos">
-              <i class="fas fa-folder-open"></i>
-              <span>Proyectos</span>
-            </div>
-
-            <!-- Certificaciones -->
-            <div
-              class="tab-custom px-6 py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary"
-              data-tab="certificaciones">
-              <i class="fas fa-certificate"></i>
-              <span>Certificaciones</span>
-            </div>
-
-            <!-- Tecnologías -->
-            <div
-              class="tab-custom px-6 py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2  hover:border-b-2 hover:border-primary"
-              data-tab="tecnologias">
-              <i class="fas fa-code"></i>
-              <span>Tecnologías</span>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Contenedores de contenido -->
-        <div class="w-full max-w-6xl mx-auto mt-6 px-4">
-          <!-- Proyectos -->
-          <div id="tab-proyectos" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 fade"
-            data-animation="fade-up">
-
-          </div>
-
-          <!-- Contenedor del carrusel -->
-          <div id="tab-certificaciones" class="tab-content hidden mt-6 fade" data-animation="fade-up">
-            <div class="flex flex-col items-center w-full gap-10">
-
-              <!-- Carrusel -->
-              <div class="w-full bg-white/5 backdrop-blur-md rounded-xl shadow-md p-4 overflow-hidden z-0">
-                <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-6 w-full">
-                  <!-- Aquí JS inyectará las certificaciones -->
-                </div>
-              </div>
-
-              <!-- Botones de navegación debajo (fuera del carrusel) -->
-              <div class="flex justify-center gap-6 sm:gap-12 flex-wrap">
-                <button id="prev-btn" aria-label="Anterior"
-                  class="bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-md hover:scale-105 transition duration-300 fade"
-                  data-animation="fade-left">
-                  <i class="fas fa-chevron-left text-xl sm:text-2xl"></i>
-                </button>
-
-                <button id="next-btn" aria-label="Siguiente"
-                  class="bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-md hover:scale-105 transition duration-300 fade"
-                  data-animation="fade-right">
-                  <i class="fas fa-chevron-right text-xl sm:text-2xl"></i>
-                </button>
-              </div>
-
-            </div>
-          </div>
-
-
-          <!-- Modal que reutilizamos para todas las imágenes -->
-          <dialog id="cert-modal" class="modal">
-            <div class="modal-box w-full max-w-4xl p-4 bg-base-100">
-              <form method="dialog" class="flex justify-end mb-2">
-                <button class="btn btn-sm btn-circle btn-ghost text-xl" aria-label="Cerrar">✕</button>
-              </form>
-              <img id="modal-img" src="" alt="Certificado ampliado"
-                class="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow" />
-            </div>
-          </dialog>
-        </div>
+      <!-- Proyectos -->
+      <div data-tab="proyectos" class="tab-custom tab-active w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 border-b-2 border-primary rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
+        <i class="fas fa-folder-open"></i>
+        <span>Proyectos</span>
       </div>
 
-      <!-- Contenido tecnologias -->
-      <div id="tab-tecnologias"
-        class="tab-content hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1100px] mx-auto fade"
-        data-animation="fade-up">
+      <!-- Certificaciones -->
+      <div data-tab="certificaciones" class="tab-custom w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
+        <i class="fas fa-certificate"></i>
+        <span>Certificaciones</span>
       </div>
 
+      <!-- Tecnologías -->
+      <div data-tab="tecnologias" class="tab-custom w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
+        <i class="fas fa-code"></i>
+        <span>Tecnologías</span>
+      </div>
     </div>
 
-  </section>
+    <!-- Contenedores de contenido -->
+    <div class="w-full max-w-6xl mx-auto mt-6 min-h-[510px] px-4">
+
+      <!-- Proyectos -->
+      <div id="tab-proyectos" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 fade" data-animation="fade-up">
+        <!-- Aquí tus proyectos -->
+      </div>
+
+      <!-- Certificaciones -->
+      <div id="tab-certificaciones" class="tab-content hidden mt-6 fade" data-animation="fade-up">
+        <div class="flex flex-col items-center w-full gap-10">
+          <!-- Carrusel -->
+          <div class="w-full bg-white/5 backdrop-blur-md rounded-xl shadow-md p-4 overflow-hidden z-0">
+            <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-4 sm:gap-6 w-full px-4 sm:px-0">
+              <!-- JS inyectará las certificaciones -->
+            </div>
+          </div>
+
+          <!-- Botones de navegación -->
+          <div class="flex justify-center gap-6 sm:gap-12 flex-wrap mt-4">
+            <button id="prev-btn" aria-label="Anterior" class="bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+              <i class="fas fa-chevron-left text-xl sm:text-2xl"></i>
+            </button>
+
+            <button id="next-btn" aria-label="Siguiente" class="bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+              <i class="fas fa-chevron-right text-xl sm:text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tecnologías -->
+      <div id="tab-tecnologias" class="tab-content hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1100px] mx-auto fade" data-animation="fade-up">
+        <!-- JS inyectará las tecnologías -->
+      </div>
+    </div>
+
+    <!-- Modal para certificaciones -->
+    <dialog id="cert-modal" class="modal">
+      <div class="modal-box w-full max-w-4xl p-4 bg-base-100">
+        <form method="dialog" class="flex justify-end mb-2">
+          <button class="btn btn-sm btn-circle btn-ghost text-xl" aria-label="Cerrar">✕</button>
+        </form>
+        <img id="modal-img" src="" alt="Certificado ampliado" class="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow" />
+      </div>
+    </dialog>
+
+  </div>
+</section>
+
+
+
   <!-- Contacto -->
   <section id="contacto" class="min-h-screen flex items-center justify-center px-4 py-20">
     <div class="max-w-4xl w-full text-white grid grid-cols-1 md:grid-cols-2 gap-10">

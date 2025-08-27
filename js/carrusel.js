@@ -1,4 +1,3 @@
-
 export function crearCarrusel({ trackSelector, prevBtnSelector, nextBtnSelector, datos, render, visibleSlides = 2 }) {
   const track = document.querySelector(trackSelector);
   const prevBtn = document.querySelector(prevBtnSelector);
@@ -20,22 +19,31 @@ export function crearCarrusel({ trackSelector, prevBtnSelector, nextBtnSelector,
   const slides = Array.from(track.children);
   let currentSlide = 0;
 
+  function getVisibleSlides() {
+    // Detecta si es móvil (Tailwind sm = 640px)
+    return window.innerWidth < 640 ? 1 : visibleSlides;
+  }
+
   function updateCarousel() {
     const totalSlides = slides.length;
-    const slideWidth = 100 / visibleSlides;
-    const translateX = (100 / totalSlides) * currentSlide;
+    const visible = getVisibleSlides();
 
-    track.style.width = `${totalSlides * slideWidth}%`;
+    
+    const trackWidth = track.clientWidth;
+const gapValue = parseFloat(getComputedStyle(track).gap) || 0;
+slides.forEach(slide => {
+  slide.style.width = `calc(${100 / visible}% - ${gapValue}px)`;
+});
 
-    slides.forEach(slide => {
-      slide.style.width = `${100 / totalSlides}%`;
-    });
 
+    // Transform para mostrar la slide correcta
+    const translateX = (100 / visible) * currentSlide;
     track.style.transform = `translateX(-${translateX}%)`;
   }
 
   function nextSlide() {
-    if (currentSlide < slides.length - visibleSlides) {
+    const visible = getVisibleSlides();
+    if (currentSlide < slides.length - visible) {
       currentSlide++;
       updateCarousel();
     }
@@ -58,3 +66,5 @@ export function crearCarrusel({ trackSelector, prevBtnSelector, nextBtnSelector,
 
   updateCarousel();
 }
+
+

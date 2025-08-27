@@ -39,19 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
     breakLines: false,
     waitUntilVisible: true,
   })
-  .type("Especializado en backend.")
-  .pause(1200)
-  .delete(26)
-  .type("Amante de Laravel y PHP.")
-  .pause(1200)
-  .delete(25)
-  .type("Diseñador de APIs eficientes.")
-  .pause(1500)
-  .delete(29)
-  .type("Siempre listo para nuevos desafíos.")
-  .pause(1600)
-  .delete(36)
-  .go();
+    .type("Orientado a soluciones eficientes.")
+    .pause(1200)
+    .delete(35)
+    .type("PHP, Laravel y un café, mi combo ideal.")
+    .pause(1200)
+    .delete(39)
+    .type("Diseñador de APIs robustas.")
+    .pause(1500)
+    .delete(28)
+    .type("Transformando ideas en código.")
+    .pause(1600)
+    .delete(31)
+    .go();
+
 
   // Control de pestañas activas
   const tabs = document.querySelectorAll("#tab-buttons .tab-custom");
