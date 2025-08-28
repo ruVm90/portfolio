@@ -92,7 +92,7 @@
         </h1>
 
         <h2
-          class="text-3xl sm:text-4xl md:text-5xl font-semibold mt-1 sm:mt-2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight fade"
+          class="text-3xl sm:text-4xl md:text-5xl font-semibold mt-1 sm:mt-2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight inline-block py-2 fade"
           data-animation="fade-up">
           Desarrollador Backend
         </h2>
@@ -118,10 +118,11 @@
 
         <div class="flex flex-row flex-wrap justify-center gap-3 mt-6 sm:mt-8 lg:justify-start">
           <a href="#portfolio"
-            class="btn btn-sm sm:btn-md bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white shadow-lg fade"
+            class="btn btn-sm sm:btn-md bg-gradient-to-r from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg fade"
             data-animation="fade-left">
             Ver proyectos
           </a>
+
           <a href="#contacto"
             class="btn btn-sm sm:btn-md bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-green-500 text-white shadow-lg fade"
             data-animation="fade-right">
@@ -161,7 +162,7 @@
     <div class="max-w-5xl w-full mx-auto flex flex-col gap-8 text-center lg:text-left">
 
       <h2
-        class="text-3xl sm:text-4xl md:text-5xl font-semibold m-auto  bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent fade"
+        class="text-3xl sm:text-4xl md:text-5xl font-semibold m-auto  bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent inline-block py-2 fade"
         data-animation="fade-up">
         Sobre mí
       </h2>
@@ -240,90 +241,102 @@
       </div>
   </section>
   <!-- Portfolio -->
-<section id="portfolio" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
-  <div class="max-w-6xl w-full mx-auto flex flex-col gap-10 text-center lg:text-left">
+  <section id="portfolio" class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-transparent">
+    <div class="max-w-6xl w-full mx-auto flex flex-col gap-10 text-center lg:text-left">
 
-    <!-- Título -->
-    <h2 class="text-4xl md:text-5xl m-auto font-bold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent fade" data-animation="fade-up">
-      Mis proyectos
-    </h2>
+      <!-- Título -->
+      <h2
+        class="text-4xl md:text-5xl m-auto font-semibold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent fade inline-block py-2"
+        data-animation="fade-up">
+        Mis proyectos
+      </h2>
 
-    <!-- Introducción -->
-    <p class="text-xl text-gray-300 leading-relaxed text-center fade" data-animation="fade-up">
-      Aquí muestro algunos de mis proyectos como desarrollador web y las certificaciones obtenidas.
-    </p>
+      <!-- Introducción -->
+      <p class="text-xl text-gray-300 leading-relaxed text-center fade" data-animation="fade-up">
+        Aquí muestro algunos de mis proyectos como desarrollador web y las certificaciones obtenidas.
+      </p>
 
-    <!-- Botones de pestañas -->
-    <div id="tab-buttons" class="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md p-2 sm:p-4 flex gap-4 sm:gap-12 overflow-x-auto sm:overflow-x-visible no-scrollbar text-white text-base sm:text-lg font-semibold sm:justify-center snap-x sm:snap-none">
+      <!-- Botones de pestañas -->
+      <div id="tab-buttons"
+        class="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md p-2 sm:p-4 flex gap-4 sm:gap-12 overflow-x-auto sm:overflow-x-visible no-scrollbar text-white text-base sm:text-lg font-semibold sm:justify-center snap-x sm:snap-none">
 
-      <!-- Proyectos -->
-      <div data-tab="proyectos" class="tab-custom tab-active w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 border-b-2 border-primary rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
-        <i class="fas fa-folder-open"></i>
-        <span>Proyectos</span>
-      </div>
+        <!-- Proyectos -->
+        <div data-tab="proyectos"
+          class="tab-custom tab-active w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 border-b-2 border-primary rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
+          <i class="fas fa-folder-open"></i>
+          <span>Proyectos</span>
+        </div>
 
-      <!-- Certificaciones -->
-      <div data-tab="certificaciones" class="tab-custom w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
-        <i class="fas fa-certificate"></i>
-        <span>Certificaciones</span>
-      </div>
+        <!-- Certificaciones -->
+        <div data-tab="certificaciones"
+          class="tab-custom w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
+          <i class="fas fa-certificate"></i>
+          <span>Certificaciones</span>
+        </div>
 
-      <!-- Tecnologías -->
-      <div data-tab="tecnologias" class="tab-custom w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
-        <i class="fas fa-code"></i>
-        <span>Tecnologías</span>
-      </div>
-    </div>
-
-    <!-- Contenedores de contenido -->
-    <div class="w-full max-w-6xl mx-auto mt-6 min-h-[510px] px-4">
-
-      <!-- Proyectos -->
-      <div id="tab-proyectos" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 fade" data-animation="fade-up">
-        <!-- Aquí tus proyectos -->
-      </div>
-
-      <!-- Certificaciones -->
-      <div id="tab-certificaciones" class="tab-content hidden mt-6 fade" data-animation="fade-up">
-        <div class="flex flex-col items-center w-full gap-10">
-          <!-- Carrusel -->
-          <div class="w-full bg-white/5 backdrop-blur-md rounded-xl shadow-md p-4 overflow-hidden z-0">
-            <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-4 sm:gap-6 w-full px-4 sm:px-0">
-              <!-- JS inyectará las certificaciones -->
-            </div>
-          </div>
-
-          <!-- Botones de navegación -->
-          <div class="flex justify-center gap-6 sm:gap-12 flex-wrap mt-4">
-            <button id="prev-btn" aria-label="Anterior" class="bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
-              <i class="fas fa-chevron-left text-xl sm:text-2xl"></i>
-            </button>
-
-            <button id="next-btn" aria-label="Siguiente" class="bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
-              <i class="fas fa-chevron-right text-xl sm:text-2xl"></i>
-            </button>
-          </div>
+        <!-- Tecnologías -->
+        <div data-tab="tecnologias"
+          class="tab-custom w-[45%] sm:w-auto px-4 py-2 sm:px-6 sm:py-3 rounded-b-md cursor-pointer transition-all duration-300 flex items-center gap-2 hover:border-b-2 hover:border-primary snap-start">
+          <i class="fas fa-code"></i>
+          <span>Tecnologías</span>
         </div>
       </div>
 
-      <!-- Tecnologías -->
-      <div id="tab-tecnologias" class="tab-content hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1100px] mx-auto fade" data-animation="fade-up">
-        <!-- JS inyectará las tecnologías -->
+      <!-- Contenedores de contenido -->
+      <div class="w-full max-w-6xl mx-auto mt-6 min-h-[510px] px-4">
+
+        <!-- Proyectos -->
+        <div id="tab-proyectos" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 fade" data-animation="fade-up">
+          <!-- Aquí tus proyectos -->
+        </div>
+
+        <!-- Certificaciones -->
+        <div id="tab-certificaciones" class="tab-content hidden mt-6 fade" data-animation="fade-up">
+          <div class="flex flex-col items-center w-full gap-10">
+            <!-- Carrusel -->
+            <div class="w-full bg-white/5 backdrop-blur-md rounded-xl shadow-md p-4 overflow-hidden z-0">
+              <div id="carousel-track"
+                class="flex transition-transform duration-500 ease-in-out gap-4 sm:gap-6 w-full px-4 sm:px-0">
+                <!-- JS inyectará las certificaciones -->
+              </div>
+            </div>
+
+            <!-- Botones de navegación -->
+            <div class="flex justify-center gap-6 sm:gap-12 flex-wrap mt-4">
+              <button id="prev-btn" aria-label="Anterior"
+                class="bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+                <i class="fas fa-chevron-left text-xl sm:text-2xl"></i>
+              </button>
+
+              <button id="next-btn" aria-label="Siguiente"
+                class="bg-white/30 hover:bg-white/50 text-gray-900 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+                <i class="fas fa-chevron-right text-xl sm:text-2xl"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tecnologías -->
+        <div id="tab-tecnologias"
+          class="tab-content hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1100px] mx-auto fade"
+          data-animation="fade-up">
+          <!-- JS inyectará las tecnologías -->
+        </div>
       </div>
+
+      <!-- Modal para certificaciones -->
+      <dialog id="cert-modal" class="modal">
+        <div class="modal-box w-full max-w-4xl p-4 bg-base-100">
+          <form method="dialog" class="flex justify-end mb-2">
+            <button class="btn btn-sm btn-circle btn-ghost text-xl" aria-label="Cerrar">✕</button>
+          </form>
+          <img id="modal-img" src="" alt="Certificado ampliado"
+            class="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow" />
+        </div>
+      </dialog>
+
     </div>
-
-    <!-- Modal para certificaciones -->
-    <dialog id="cert-modal" class="modal">
-      <div class="modal-box w-full max-w-4xl p-4 bg-base-100">
-        <form method="dialog" class="flex justify-end mb-2">
-          <button class="btn btn-sm btn-circle btn-ghost text-xl" aria-label="Cerrar">✕</button>
-        </form>
-        <img id="modal-img" src="" alt="Certificado ampliado" class="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow" />
-      </div>
-    </dialog>
-
-  </div>
-</section>
+  </section>
 
 
 
@@ -333,8 +346,14 @@
 
       <!-- Lado izquierdo: texto y redes -->
       <div class="flex flex-col justify-center fade" data-animation="fade-left">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-          ¿Hablamos?<br />Estoy a solo un mensaje.
+        <h2
+          class="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight inline-block py-2 fade"
+          data-animation="fade-up">
+          ¿Hablamos?
+        </h2>
+
+        <br />
+        <h2 class="text-4xl md:text-5xl font-semibold mb-5 leading-tight text-white">Estoy a solo un mensaje.
         </h2>
         <p class="text-lg text-gray-300 mb-6">
           Me encanta conectar con personas con ideas, proyectos o simplemente con ganas de compartir. Si tienes algo en
@@ -395,7 +414,7 @@
         </div>
 
         <button type="submit" id="submit-btn"
-          class="w-full py-3 bg-gradient-to-r from-green-500 to-blue-500 hover:from-blue-600 hover:to-green-600 rounded-lg font-semibold shadow-lg transition-transform hover:scale-105">
+          class="w-full py-3 bg-gradient-to-r from-green-500 to-blue-500 hover:from-blue-500 hover:to-green-500 rounded-lg font-semibold shadow-lg transition-transform hover:scale-105">
           Enviar mensaje
         </button>
 
