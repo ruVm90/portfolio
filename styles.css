@@ -70,12 +70,16 @@
   scrollbar-width: none;
 }
 
-#carousel-track {
-  scroll-snap-type: x mandatory;
+.carousel-track {
+  display: flex;
+  gap: 16px; /* Ajusta el espacio entre tarjetas */
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
-
-#carousel-track > div {
-  scroll-snap-align: center;
+.carousel-slide {
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 

@@ -18,28 +18,30 @@ export function crearCarrusel({ trackSelector, prevBtnSelector, nextBtnSelector,
 
   const slides = Array.from(track.children);
   let currentSlide = 0;
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
 
   function getVisibleSlides() {
-    // Detecta si es móvil (Tailwind sm = 640px)
     return window.innerWidth < 640 ? 1 : visibleSlides;
   }
 
   function updateCarousel() {
-    const totalSlides = slides.length;
-    const visible = getVisibleSlides();
+  const visible = getVisibleSlides();
+  const gapValue = parseFloat(getComputedStyle(track).gap) || 0;
 
-    
-    const trackWidth = track.clientWidth;
-const gapValue = parseFloat(getComputedStyle(track).gap) || 0;
-slides.forEach(slide => {
-  slide.style.width = `calc(${100 / visible}% - ${gapValue}px)`;
-});
+  const trackWidth = track.clientWidth;
+  const totalGap = gapValue * (visible - 1);
+  const slideWidth = (trackWidth - totalGap) / visible;
 
+  slides.forEach(slide => {
+    slide.style.width = `${slideWidth}px`;
+  });
 
-    // Transform para mostrar la slide correcta
-    const translateX = (100 / visible) * currentSlide;
-    track.style.transform = `translateX(-${translateX}%)`;
-  }
+  const translateX = (slideWidth + gapValue) * currentSlide;
+  track.style.transform = `translateX(-${translateX}px)`;
+}
+
 
   function nextSlide() {
     const visible = getVisibleSlides();
@@ -62,6 +64,43 @@ slides.forEach(slide => {
   window.addEventListener("resize", () => {
     currentSlide = 0;
     updateCarousel();
+  });
+
+  // ✅ Soporte para Swipe en móviles
+  track.addEventListener("touchstart", (e) => {
+    if (getVisibleSlides() === 1) {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      track.style.transition = "none"; // Para mover sin animación
+    }
+  });
+
+  track.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+
+    // Desplazar el track en tiempo real (efecto arrastre)
+    const visible = getVisibleSlides();
+    const translateX = ((100 / visible) * currentSlide) + (deltaX / track.clientWidth) * 100;
+    track.style.transform = `translateX(-${translateX}%)`;
+  });
+
+  track.addEventListener("touchend", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = "transform 0.3s ease";
+
+    const deltaX = currentX - startX;
+    const threshold = 50; // Umbral en píxeles
+
+    if (deltaX > threshold) {
+      prevSlide();
+    } else if (deltaX < -threshold) {
+      nextSlide();
+    } else {
+      updateCarousel();
+    }
   });
 
   updateCarousel();
