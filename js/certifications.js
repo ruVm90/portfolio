@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "img/Certificaciones/introduction_cibersecurity.png",
     },
     {
+      title: "Gestion de la seguridad informática en la empresa",
+      description: "Políticas y estrategias de seguridad en la empresa.",
+      image: "img/Certificaciones/cibersecurity_moba.png",
+    },
+    {
       title: "Fundamentos de Windows 10",
       description: "Uso y gestión de Windows 10.",
       image: "img/Certificaciones/fundamentos_windows10.png",
