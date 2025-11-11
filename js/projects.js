@@ -10,15 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
             lottie: false
         },
         {
+            title: "Secure Authentication System",
+            photo: "img/Proyectos/secure_authentication_system.png",
+            description: "Sistema completo de registro y autenticación de usuarios desarrollado con PHP puro y MySQL, implementando las mejores prácticas de seguridad web para proteger contra las vulnerabilidades más comunes.",
+            link: "secure_authentication_system.html",
+            lottie: false
+        },
+       /* {
             title: "Próximamente...",
             photo: "lottie/Under_construction.json",
             description: "Proyecto en desarrollo",
             link: "#",
             lottie: true
-        }
+        }*/
     ]
 
     const tab_projects = document.getElementById("tab-proyectos");
+    
     function crearBotonVerDetalles(url) {
         const actions = document.createElement("div");
         actions.className = "card-actions justify-end mt-4";
@@ -67,11 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
         body.className = "card-body";
 
         const figure = document.createElement("figure");
-        figure.className = "rounded-xl overflow-hidden shadow-md group";
+        // Altura fija para todas las imágenes (h-80 = 320px para ratio 4:3)
+        figure.className = "rounded-xl overflow-hidden shadow-md group h-80";
 
         if (project.lottie) {
             const animContainer = document.createElement("div");
-            animContainer.className = "w-full h-64";
+            animContainer.className = "w-full h-full";
             figure.appendChild(animContainer);
 
             lottie.loadAnimation({
@@ -106,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
         body.appendChild(p);
         if (project.link !== "#") {
             const button = crearBotonVerDetalles(project.link);
-
             body.appendChild(button);
         }
         card.appendChild(body);
