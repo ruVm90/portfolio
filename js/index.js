@@ -39,15 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
     breakLines: false,
     waitUntilVisible: true,
   })
-    .type("Orientado a soluciones eficientes.")
-    .pause(1200)
-    .delete(35)
-    .type("Diseñador de APIs robustas.")
-    .pause(1500)
-    .delete(28)
-    .type("Transformando ideas en código.")
-    .pause(1600)
-    .delete(31)
+    .type("Codigo limpio y seguro.")
+    .pause(800)
+    .delete()
+    .type("APIs robustas.")
+    .pause(800)
+    .delete()
+    .type("Arquitectura escalable.")
+    .pause(800)
+    .delete()
     .go();
 
 

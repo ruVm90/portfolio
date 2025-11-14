@@ -41,16 +41,16 @@
   <div class="navbar fixed top-0 left-0 w-full z-50 bg-transparent px-4 flex items-center">
     <!-- Logo -->
     <div class="navbar-start">
-      <a class="btn btn-ghost text-xl font-bold text-white" href="#inicio">Rubén Vega</a>
+      <a class="btn btn-ghost text-xl font-bold text-white hover:text-yellow-300 transition-colors" href="#inicio">Rubén Vega</a>
     </div>
 
     <!-- Desktop menu -->
     <div class="navbar-end hidden lg:flex ml-auto">
       <ul class="menu menu-horizontal text-base font-semibold px-1 space-x-4 text-white">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#sobremi">Sobre mí</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#inicio" class="hover:text-yellow-300 transition-colors">Inicio</a></li>
+        <li><a href="#sobremi" class="hover:text-yellow-300 transition-colors">Sobre mí</a></li>
+        <li><a href="#portfolio" class="hover:text-yellow-300 transition-colors">Portfolio</a></li>
+        <li><a href="#contacto" class="hover:text-yellow-300 transition-colors">Contacto</a></li>
       </ul>
     </div>
 
@@ -64,7 +64,7 @@
 
   <!-- Mobile menu panel -->
   <div id="mobile-menu"
-    class="fixed top-16 left-0 w-full h-2/5 bg-black/50 backdrop-blur-md z-40 transform -translate-y-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8">
+    class="fixed top-16 left-0 w-full h-screen bg-black/50 backdrop-blur-md z-40 transform -translate-y-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8">
     <!-- Close button -->
     <button id="close-menu" class="absolute top-2 right-4 text-white text-3xl hover:text-yellow-300">&times;</button>
 
@@ -167,27 +167,29 @@
         Sobre mí
       </h2>
 
-     <div class="flex flex-col space-y-3 text-center lg:text-left">
-  <p class="m-0 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed fade" data-animation="fade-up">
-    Desarrollador backend especializado en <strong>seguridad y arquitectura limpia</strong>. 
-    Graduado en <strong>Desarrollo de Aplicaciones Web (DAW)</strong>.
-  </p>
+      <div class="flex flex-col space-y-4 text-center lg:text-left">
+        <p class="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed fade" data-animation="fade-up">
+          Soy un desarrollador Backend Junior que disfruta trabajando con <strong class="text-white">PHP y
+            Laravel</strong>.
+          Estudié Desarrollo de Aplicaciones Web (<strong class="text-white">DAW</strong>) y me gusta crear APIs RESTful
+          seguras, claras y fáciles de mantener.
+        </p>
 
-  <p class="m-0 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed fade" data-animation="fade-up">
-    Me especializo en construir sistemas que son <strong>seguros por diseño</strong>: 
-    protección contra SQL Injection, XSS, CSRF, y gestión robusta de autenticación y sesiones.
-  </p>
+        <p class="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed fade" data-animation="fade-up">
+          Me interesa especialmente la <strong class="text-white">seguridad web</strong>: evitar SQL Injection, XSS o
+          CSRF,
+          además de gestionar bien las sesiones y seguir buenas prácticas de arquitectura. Trato de que mi código sea
+          limpio,
+          organizado y entendible para cualquiera.
+        </p>
 
-  <p class="m-0 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed fade" data-animation="fade-up">
-    Trabajo principalmente con <strong>Laravel y PHP</strong>, desarrollando <strong>APIs RESTful</strong> bien estructuradas 
-    y bases de datos relacionales con <strong>MySQL</strong>. Complemento el backend con <strong>Tailwind CSS</strong> 
-    para crear interfaces modernas y responsive.
-  </p>
-
-  <p class="m-0 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed fade" data-animation="fade-up">
-    Busco contribuir en equipos donde la <strong>calidad del código</strong> y la <strong>seguridad</strong> sean prioridades, no opciones.
-  </p>
-</div>
+        <p class="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed fade" data-animation="fade-up">
+          También trabajo con <strong class="text-white">JavaScript y Tailwind CSS</strong>
+          cuando necesito completar el lado visual, y utilizo <strong class="text-white">MySQL</strong> cuidando el
+          diseño de la base de datos
+          y la eficiencia de las consultas.
+        </p>
+      </div>
 
 
 
