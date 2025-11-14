@@ -1,29 +1,27 @@
+// ==========================================
+// PROJECTS.JS - CARDS COMPACTAS Y OPTIMIZADAS
+// ==========================================
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Creacion dinamica de proyectos
     const projects = [
         {
             title: "My Delicious Blog",
             photo: "img/Proyectos/my_delicious_blog.png",
-            description: "Blog de recetas con login, autenticación y roles de usuario desarrollado con Laravel. Permite crear, editar y buscar recetas de forma intuitiva.",
+            description: "Sistema completo de gestión de recetas con autenticación, roles de usuario y CRUD. Desarrollado con Laravel, MySQL y Tailwind CSS.",
+            tags: ["Laravel", "MySQL", "Auth", "CRUD"],
             link: "my_delicious_blog.html",
             lottie: false
         },
         {
             title: "Secure Authentication System",
             photo: "img/Proyectos/secure_authentication_system.png",
-            description: "Sistema completo de registro y autenticación de usuarios desarrollado con PHP puro y MySQL, implementando las mejores prácticas de seguridad web para proteger contra las vulnerabilidades más comunes.",
+            description: "Sistema de autenticación seguro con PHP puro. Implementa 9 capas de protección contra SQL Injection, XSS, CSRF y Session Fixation.",
+            tags: ["PHP", "Security", "PDO", "BCRYPT"],
             link: "secure_authentication_system.html",
             lottie: false
-        },
-       /* {
-            title: "Próximamente...",
-            photo: "lottie/Under_construction.json",
-            description: "Proyecto en desarrollo",
-            link: "#",
-            lottie: true
-        }*/
-    ]
+        }
+    ];
 
     const tab_projects = document.getElementById("tab-proyectos");
     
@@ -33,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const link = document.createElement("a");
         link.href = url;
-        link.className = "btn btn-primary transition-transform duration-200 hover:scale-105";
+        link.className = "btn btn-sm btn-primary transition-transform duration-200 hover:scale-105";
 
         const text = document.createTextNode("Ver detalles");
         link.appendChild(text);
@@ -41,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // SVG
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-        svg.setAttribute("width", "24");
-        svg.setAttribute("height", "24");
+        svg.setAttribute("width", "20");
+        svg.setAttribute("height", "20");
         svg.setAttribute("viewBox", "0 0 24 24");
         svg.setAttribute("fill", "none");
         svg.setAttribute("stroke", "currentColor");
@@ -66,21 +64,37 @@ document.addEventListener("DOMContentLoaded", () => {
         return actions;
     }
 
+    // ✅ Función para crear tags tecnológicos
+    function crearTags(tags) {
+        const container = document.createElement("div");
+        container.className = "flex flex-wrap gap-2 mt-3";
+
+        tags.forEach(tag => {
+            const badge = document.createElement("span");
+            badge.className = "badge badge-sm badge-outline";
+            badge.textContent = tag;
+            container.appendChild(badge);
+        });
+
+        return container;
+    }
 
     projects.forEach(project => {
         const card = document.createElement("div");
-        card.className = "card bg-base-100 shadow-md hover:shadow-xl transition-shadow duration-300";
+        // ✅ Altura máxima controlada + hover suave
+        card.className = "card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1";
 
         const body = document.createElement("div");
-        body.className = "card-body";
+        body.className = "card-body p-4"; // ✅ Padding reducido
 
+        // ✅ SOLUCIÓN: Contenedor más ancho (aspect ratio 16:9)
         const figure = document.createElement("figure");
-        // Altura fija para todas las imágenes (h-80 = 320px para ratio 4:3)
-        figure.className = "rounded-xl overflow-hidden shadow-md group h-80";
+        figure.className = "rounded-lg overflow-hidden bg-gray-800/50 group w-full aspect-video"; // aspect-video = 16:9
+        // No necesitamos height fija, aspect-video lo maneja
 
         if (project.lottie) {
             const animContainer = document.createElement("div");
-            animContainer.className = "w-full h-full";
+            animContainer.className = "w-full h-full flex items-center justify-center";
             figure.appendChild(animContainer);
 
             lottie.loadAnimation({
@@ -93,30 +107,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } else {
             const img = document.createElement("img");
-            img.className = "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105";
+            // ✅ object-contain = muestra la imagen COMPLETA
+            // ✅ El contenedor con aspect-video hace que use más ancho
+            img.className = "w-full h-full object-contain transition-transform duration-500 group-hover:scale-105";
             img.src = project.photo;
             img.alt = project.title;
             figure.appendChild(img);
         }
 
-
         const h2 = document.createElement("h2");
-        h2.className = "card-title mt-5 text-2xl font-bold";
+        h2.className = "card-title mt-4 text-xl font-bold"; // ✅ Título más pequeño
         h2.textContent = project.title;
 
         const p = document.createElement("p");
-        p.className = "mt-2 text-gray-300";
+        p.className = "mt-2 text-gray-300 text-sm leading-relaxed"; // ✅ Texto más pequeño
         p.textContent = project.description;
 
+        // ✅ Tags tecnológicos
+        const tags = crearTags(project.tags);
 
         // Construir card
         body.appendChild(figure);
         body.appendChild(h2);
         body.appendChild(p);
+        body.appendChild(tags);
+        
         if (project.link !== "#") {
             const button = crearBotonVerDetalles(project.link);
             body.appendChild(button);
         }
+        
         card.appendChild(body);
         tab_projects.appendChild(card);
     });
