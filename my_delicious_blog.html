@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Deliciuos blog details</title>
+  <title>My Delicious Blog - Detalles</title>
   <link rel="icon" href="img/favicon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css">
 
@@ -25,6 +25,7 @@
 <body class="relative text-white min-h-screen flex flex-col">
   <canvas id="canvas"></canvas>
   <div class="flex-1 relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6 lg:py-10">
+
     <!-- Botón Volver -->
     <div class="mb-6 mt-4 lg:mt-12 fade" data-animation="fade-up">
       <a href="index.html" id="volver"
@@ -35,23 +36,24 @@
     </div>
 
     <!-- Grid principal -->
-    <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1fr] gap-8 lg:gap-12 items-start">
-      <!-- Columna izquierda -->
-      <div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 fade" data-animation="fade-up">My Delicious Blog</h1>
-        <div
-          class="h-1 w-20 sm:w-24 bg-gradient-to-r from-indigo-700 to-purple-600 rounded my-6 sm:my-8 shadow-md shadow-indigo-500/40 fade"
-          data-animation="fade-up">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-start">
+
+      <!-- ========== COLUMNA IZQUIERDA ========== -->
+      <div class="space-y-6">
+        
+        <!-- Título + línea decorativa + descripción -->
+        <div class="fade" data-animation="fade-up">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">My Delicious Blog</h1>
+          <div class="h-1 w-20 sm:w-24 bg-gradient-to-r from-indigo-700 to-purple-600 rounded shadow-md shadow-indigo-500/40 mb-4"></div>
+          <p class="text-white/70 text-base sm:text-lg">
+            Blog de recetas donde los usuarios pueden publicar, editar y descubrir recetas fácilmente.
+          </p>
         </div>
-        <p class="text-white/70 max-w-xl text-base sm:text-lg fade" data-animation="fade-up">
-          Blog de recetas, donde el usuario puede publicar, editar y descubrir recetas fácilmente.
-        </p>
 
         <!-- Tecnologías y características -->
-        <div class="my-6 sm:my-8 bg-white/5 rounded-2xl p-4 fade" data-animation="fade-up">
+        <div class="bg-white/5 rounded-2xl p-4 fade" data-animation="fade-up">
           <div class="grid grid-cols-2 gap-4 sm:gap-6">
-            <div
-              class="flex items-center bg-white/10 p-3 sm:p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
+            <div class="flex items-center bg-white/10 p-3 sm:p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
               <img src="img/Proyectos/my_delicious_blog_details/technologies.png" alt="Icono tecnologías"
                 class="w-10 h-10 sm:w-12 sm:h-12 mr-3 sm:mr-4" />
               <div>
@@ -60,8 +62,7 @@
               </div>
             </div>
 
-            <div
-              class="flex items-center bg-white/10 p-3 sm:p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
+            <div class="flex items-center bg-white/10 p-3 sm:p-4 rounded-xl border-2 border-indigo-700 hover:scale-105 hover:border-indigo-500 transition duration-300">
               <img src="img/Proyectos/my_delicious_blog_details/features.png" alt="Icono características"
                 class="w-10 h-10 sm:w-12 sm:h-12 mr-3 sm:mr-4" />
               <div>
@@ -72,133 +73,122 @@
           </div>
         </div>
 
-        <!-- Botones -->
-        <div class="flex gap-3 sm:gap-4 my-6 flex-wrap">
-          <a href="https://midemo.com" target="_blank"
-            class="hidden min-w-[130px] sm:min-w-[150px] rounded-full font-medium uppercase tracking-wide flex items-center justify-center gap-2 bg-primary hover:bg-primary-focus text-white px-4 sm:px-5 py-2 rounded-lg shadow transition fade"
-            data-animation="fade-left">
-            <i class="fas fa-eye"></i> Ver demo
-          </a>
+        <!-- Botón GitHub -->
+        <div class="fade" data-animation="fade-up">
           <a href="https://github.com/ruVm90/delicius_blog" target="_blank"
-            class="min-w-[130px] sm:min-w-[150px] rounded-full font-medium uppercase tracking-wide flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary hover:text-white px-4 sm:px-5 py-2 rounded-lg shadow transition fade"
-            data-animation="fade-up">
-            <i class="fab fa-github"></i> GitHub
+            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg shadow-lg transition font-medium">
+            <i class="fab fa-github text-lg"></i> 
+            Ver en GitHub
           </a>
         </div>
 
-        <!-- Tecnologías -->
-        <div class="mt-8 sm:mt-10">
-          <h2 class="text-lg sm:text-xl font-semibold mb-6 sm:mb-10 flex items-center gap-2 text-white fade"
-            data-animation="fade-up">
+        <!-- Tecnologías utilizadas -->
+        <div class="fade" data-animation="fade-up">
+          <h2 class="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-white">
             <i class="fas fa-code text-primary"></i>
             Tecnologías utilizadas
           </h2>
-          <div class="flex flex-wrap gap-3 sm:gap-4 fade" data-animation="fade-up">
-            <!-- badges -->
-            <span
-              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
-              <span class="bg-primary/10 p-1.5 sm:p-2 rounded-full">
-                <i class="fab fa-laravel text-lg sm:text-xl"></i>
+          <div class="flex flex-wrap gap-2 sm:gap-3">
+            <span class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
+              <span class="bg-primary/10 p-1.5 rounded-full">
+                <i class="fab fa-laravel text-base"></i>
               </span>
               Laravel
             </span>
-            <span
-              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
-              <span class="bg-primary/10 p-1.5 sm:p-2 rounded-full">
-                <i class="fas fa-database text-lg sm:text-xl"></i>
+            <span class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
+              <span class="bg-primary/10 p-1.5 rounded-full">
+                <i class="fas fa-database text-base"></i>
               </span>
               MySQL
             </span>
-            <span
-              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
-              <span class="bg-primary/10 p-1.5 sm:p-2 rounded-full">
-                <i class="fas fa-wind text-lg sm:text-xl"></i>
+            <span class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
+              <span class="bg-primary/10 p-1.5 rounded-full">
+                <i class="fas fa-wind text-base"></i>
               </span>
               TailwindCSS
             </span>
-            <span
-              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
-              <span class="bg-primary/10 p-1.5 sm:p-2 rounded-full">
-                <i class="fa-brands fa-js text-lg sm:text-xl"></i>
+            <span class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
+              <span class="bg-primary/10 p-1.5 rounded-full">
+                <i class="fab fa-js text-base"></i>
               </span>
               JavaScript
             </span>
-            <span
-              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
-              <span class="bg-primary/10 p-1.5 sm:p-2 rounded-full">
-                <i class="fas fa-exchange-alt text-lg sm:text-xl"></i>
+            <span class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
+              <span class="bg-primary/10 p-1.5 rounded-full">
+                <i class="fas fa-exchange-alt text-base"></i>
               </span>
               AJAX
             </span>
           </div>
         </div>
+
       </div>
 
-      <!-- Columna derecha -->
-      <div>
-        <div
-          class="relative w-full max-w-full aspect-video border-2 border-indigo-600 rounded-2xl overflow-hidden bg-gray-900 fade"
-          data-animation="fade-up">
+      <!-- ========== COLUMNA DERECHA ========== -->
+      <div class="space-y-6">
+        
+        <!-- Imagen del proyecto (interactiva) -->
+        <div class="relative w-full aspect-video border-2 border-indigo-600 rounded-2xl overflow-hidden bg-gray-900 fade" data-animation="fade-up">
           <img id="feature-img" src="img/Proyectos/my_delicious_blog_details/welcome.png"
             class="absolute inset-0 m-auto max-h-full max-w-full object-contain opacity-100 transition-opacity duration-500 ease-in-out"
             loading="lazy" decoding="async" />
         </div>
 
         <!-- Funcionalidades principales -->
-        <div class="relative mt-8 sm:mt-10 rounded-xl p-[2px] border-2 border-indigo-700 fade" data-animation="fade-up">
+        <div class="border-2 border-indigo-700 rounded-xl fade" data-animation="fade-up">
           <div class="bg-white/5 rounded-[11px] p-4 sm:p-6">
-            <h2 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-5 flex items-center gap-2">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4 flex items-center gap-2">
               <i class="fas fa-star text-yellow-400"></i> Funcionalidades principales
             </h2>
-            <ul class="list-disc pl-6 sm:pl-10 space-y-4 sm:space-y-6 text-white/80 text-sm sm:text-base"
-              id="feature-list">
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('crud')">
-                <i class="fas fa-check-circle text-green-400 mr-2"></i>
-                Gestión completa de recetas (CRUD) con Eloquent ORM y base de datos MySQL.
+            
+            <ul class="space-y-3 text-white/80 text-sm sm:text-base" id="feature-list">
+              <li class="flex items-start gap-2 cursor-pointer hover:text-white hover:bg-white/5 p-2 rounded-lg transition" onclick="updateImage('crud')">
+                <i class="fas fa-check-circle text-green-400 mt-1 flex-shrink-0"></i>
+                <span>Gestión completa de recetas (CRUD) con Eloquent ORM y base de datos MySQL.</span>
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('auth')">
-                <i class="fas fa-user-lock text-pink-400 mr-2"></i>
-                Registro, login y protección de rutas mediante middleware para usuarios autenticados.
+              <li class="flex items-start gap-2 cursor-pointer hover:text-white hover:bg-white/5 p-2 rounded-lg transition" onclick="updateImage('auth')">
+                <i class="fas fa-user-lock text-pink-400 mt-1 flex-shrink-0"></i>
+                <span>Registro, login y protección de rutas mediante middleware para usuarios autenticados.</span>
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('roles')">
-                <i class="fas fa-user-cog text-blue-400 mr-2"></i>
-                Gestión de roles y permisos para administración de categorías.
+              <li class="flex items-start gap-2 cursor-pointer hover:text-white hover:bg-white/5 p-2 rounded-lg transition" onclick="updateImage('roles')">
+                <i class="fas fa-user-cog text-blue-400 mt-1 flex-shrink-0"></i>
+                <span>Gestión de roles y permisos para administración de categorías.</span>
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('image')">
-                <i class="fas fa-image text-blue-400 mr-2"></i>
-                Formulario de creación de recetas con subida de imágenes, y validación antes de guardar en la base de
-                datos.
+              <li class="flex items-start gap-2 cursor-pointer hover:text-white hover:bg-white/5 p-2 rounded-lg transition" onclick="updateImage('image')">
+                <i class="fas fa-image text-blue-400 mt-1 flex-shrink-0"></i>
+                <span>Formulario de creación de recetas con subida de imágenes y validación antes de guardar.</span>
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('buscador')">
-                <i class="fas fa-search text-teal-400 mr-2"></i>
-                Buscador de recetas por coincidencias con resultados en tiempo real (AJAX).
+              <li class="flex items-start gap-2 cursor-pointer hover:text-white hover:bg-white/5 p-2 rounded-lg transition" onclick="updateImage('buscador')">
+                <i class="fas fa-search text-teal-400 mt-1 flex-shrink-0"></i>
+                <span>Buscador de recetas por coincidencias con resultados en tiempo real (AJAX).</span>
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('pagination')">
-                <i class="fas fa-list-ol text-orange-400 mr-2"></i>
-                Paginación de recetas para una navegación más cómoda y eficiente.
+              <li class="flex items-start gap-2 cursor-pointer hover:text-white hover:bg-white/5 p-2 rounded-lg transition" onclick="updateImage('pagination')">
+                <i class="fas fa-list-ol text-orange-400 mt-1 flex-shrink-0"></i>
+                <span>Paginación de recetas para una navegación más cómoda y eficiente.</span>
               </li>
-              <li class="cursor-pointer hover:text-white transition" onclick="updateImage('seeders')">
-                <i class="fas fa-database text-cyan-400 mr-2"></i>
-                Uso de *seeders* para poblar la base de datos con datos de prueba.
+              <li class="flex items-start gap-2 cursor-pointer hover:text-white hover:bg-white/5 p-2 rounded-lg transition" onclick="updateImage('seeders')">
+                <i class="fas fa-database text-cyan-400 mt-1 flex-shrink-0"></i>
+                <span>Uso de seeders para poblar la base de datos con datos de prueba.</span>
               </li>
             </ul>
           </div>
         </div>
+
       </div>
+
     </div>
+
   </div>
 
   <!-- Footer -->
-  <footer class="bg-transparent border-t border-white/10 z-10 relative mt-6 sm:mt-10">
-    <div
-      class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col items-center justify-center text-center text-gray-400 space-y-4">
+  <footer class="bg-transparent border-t border-white/10 z-10 relative mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col items-center justify-center text-center text-gray-400 space-y-4">
       <p class="text-xs sm:text-sm">© 2025 - Todos los derechos reservados.</p>
       <div class="flex gap-4 sm:gap-5">
         <a href="https://github.com/ruVm90" target="_blank" class="hover:text-pink-400 transition duration-300">
           <i class="fab fa-github text-base sm:text-lg"></i>
         </a>
-        <a href="https://www.linkedin.com/in/rubenvega1890" target="_blank"
-          class="hover:text-blue-400 transition duration-300">
+        <a href="https://www.linkedin.com/in/rubenvega1890" target="_blank" class="hover:text-blue-400 transition duration-300">
           <i class="fab fa-linkedin text-base sm:text-lg"></i>
         </a>
         <a href="cv/Cv_2025.pdf" download class="hover:text-yellow-400 transition duration-300">
@@ -207,6 +197,7 @@
       </div>
     </div>
   </footer>
+
 </body>
 
 </html>

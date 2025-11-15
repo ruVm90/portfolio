@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Secure Authentication System",
             photo: "img/Proyectos/secure_authentication_system.png",
-            description: "Sistema de autenticación seguro con PHP puro. Implementa 9 capas de protección contra SQL Injection, XSS, CSRF y Session Fixation.",
+            description: "Sistema de autenticación seguro desarrollado con PHP puro. Es un proyecto enfocado en la seguridad contra SQL Injection, XSS, CSRF y Session Fixation.",
             tags: ["PHP", "Security", "PDO", "BCRYPT"],
             link: "secure_authentication_system.html",
             lottie: false
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function crearBotonVerDetalles(url) {
         const actions = document.createElement("div");
-        actions.className = "card-actions justify-end mt-4";
+        actions.className = "card-actions justify-center mt-4";
 
         const link = document.createElement("a");
         link.href = url;
@@ -64,14 +64,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return actions;
     }
 
-    // ✅ Función para crear tags tecnológicos
+    //  Función para crear tags tecnológicos
     function crearTags(tags) {
         const container = document.createElement("div");
-        container.className = "flex flex-wrap gap-2 mt-3";
+        container.className = "flex flex-wrap gap-2 mt-3 justify-center";
+
 
         tags.forEach(tag => {
             const badge = document.createElement("span");
-            badge.className = "badge badge-sm badge-outline";
+            badge.className = "badge badge-sm badge-outline ";
             badge.textContent = tag;
             container.appendChild(badge);
         });
@@ -81,16 +82,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     projects.forEach(project => {
         const card = document.createElement("div");
-        // ✅ Altura máxima controlada + hover suave
-        card.className = "card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1";
+        
+        card.className = "card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300";
 
         const body = document.createElement("div");
-        body.className = "card-body p-4"; // ✅ Padding reducido
+        body.className = "card-body p-2"; 
 
-        // ✅ SOLUCIÓN: Contenedor más ancho (aspect ratio 16:9)
+        
         const figure = document.createElement("figure");
-        figure.className = "rounded-lg overflow-hidden bg-gray-800/50 group w-full aspect-video"; // aspect-video = 16:9
-        // No necesitamos height fija, aspect-video lo maneja
+        figure.className = "rounded-lg overflow-hidden bg-gray-800/50 group w-full aspect-video"; 
+       
 
         if (project.lottie) {
             const animContainer = document.createElement("div");
@@ -107,8 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } else {
             const img = document.createElement("img");
-            // ✅ object-contain = muestra la imagen COMPLETA
-            // ✅ El contenedor con aspect-video hace que use más ancho
+            
             img.className = "w-full h-full object-contain transition-transform duration-500 group-hover:scale-105";
             img.src = project.photo;
             img.alt = project.title;
@@ -116,11 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const h2 = document.createElement("h2");
-        h2.className = "card-title mt-4 text-xl font-bold"; // ✅ Título más pequeño
+        h2.className = "card-title mt-4 text-xl font-bold text-center w-full block"; 
         h2.textContent = project.title;
 
         const p = document.createElement("p");
-        p.className = "mt-2 text-gray-300 text-sm leading-relaxed"; // ✅ Texto más pequeño
+        p.className = "mt-2 px-4 text-gray-300 text-sm leading-relaxed"; 
         p.textContent = project.description;
 
         // ✅ Tags tecnológicos
