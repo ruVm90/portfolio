@@ -76,7 +76,7 @@
               <img src="img/Proyectos/my_delicious_blog_details/technologies.png" alt="Icono tecnologías"
                 class="w-10 h-10 sm:w-12 sm:h-12 mr-3 sm:mr-4" />
               <div>
-                <p class="text-xl sm:text-2xl font-bold">7</p>
+                <p class="text-xl sm:text-2xl font-bold">8</p>
                 <p class="text-white/60 text-xs sm:text-sm">Tecnologías</p>
               </div>
             </div>
@@ -92,14 +92,22 @@
           </div>
         </div>
 
-        <!-- Botón GitHub -->
-        <div class="fade" data-animation="fade-up">
-          <a href="https://github.com/ruVm90/Secure-Authentication-System---PHP-MySQL.git" target="_blank"
-            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg shadow-lg transition font-medium">
-            <i class="fab fa-github text-lg"></i> 
-            Ver en GitHub
-          </a>
-        </div>
+      <!-- Botones GitHub y Demo -->
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 fade" data-animation="fade-up">
+  <!-- Botón Ver Demo -->
+  <a href="https://secure-authentication-system-php-mysql-production.up.railway.app/register.php" target="_blank"
+    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg shadow-lg transition font-medium">
+    <i class="fas fa-external-link-alt text-lg"></i>
+    Ver Demo
+  </a>
+
+  <!-- Botón GitHub -->
+  <a href="https://github.com/ruVm90/Secure-Authentication-System---PHP-MySQL.git" target="_blank"
+    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg shadow-lg transition font-medium">
+    <i class="fab fa-github text-lg"></i>
+    Ver en GitHub
+  </a>
+</div>
 
         <!-- Tecnologías utilizadas -->
         <div class="fade" data-animation="fade-up">
@@ -150,6 +158,12 @@
               </span>
               BCRYPT
             </span>
+             <span class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-primary/20 text-primary text-xs sm:text-sm shadow-sm">
+              <span class="bg-primary/10 p-1.5 rounded-full">
+                <i class="fa-brands fa-docker text-base"></i>
+              </span>
+              Docker
+            </span>
           </div>
         </div>
 
@@ -171,7 +185,7 @@
               <div class="flex gap-3">
                 <i class="fas fa-check-circle text-green-400 text-base flex-shrink-0 mt-1"></i>
                 <div>
-                  <h3 class="font-semibold text-white mb-1 text-sm">Validación Cliente vs Servidor</h3>
+                  <h3 class="font-semibold text-white mb-1 text-sm">Validación Cliente y Servidor</h3>
                   <p class="text-white/70 text-xs">El frontend puede ser bypaseado, el backend es la autoridad final.</p>
                 </div>
               </div>
@@ -187,6 +201,13 @@
                 <div>
                   <h3 class="font-semibold text-white mb-1 text-sm">Hashing con BCRYPT</h3>
                   <p class="text-white/70 text-xs">Por qué es unidireccional y por qué eso es bueno para la seguridad.</p>
+                </div>
+              </div>
+               <div class="flex gap-3">
+                <i class="fas fa-check-circle text-green-400 text-base flex-shrink-0 mt-1"></i>
+                <div>
+                  <h3 class="font-semibold text-white mb-1 text-sm">Despliegue en Railway</h3>
+                  <p class="text-white/70 text-xs">Uso de dockerfile para despligue en railway</p>
                 </div>
               </div>
             </div>
@@ -208,7 +229,7 @@
         <!-- Funcionalidades principales -->
         <div class="border-2 border-indigo-700 rounded-xl fade" data-animation="fade-up">
           <div class="bg-white/5 rounded-[11px] p-4 sm:p-7">
-            <h2 class="text-xl sm:text-2xl font-semibold mb-4 flex items-center gap-2">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-10 flex items-center gap-2">
               <i class="fas fa-star text-yellow-400"></i> Funcionalidades principales
             </h2>
             <ul class="space-y-7 text-white/80 text-sm sm:text-base" id="feature-list">
