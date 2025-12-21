@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const technologies = [
-    { name: "Laravel", logo: "img/Tecnologias/Laravel_logo.png" },
     { name: "PHP", logo: "img/Tecnologias/PHP_logo.png" },
+    { name: "Laravel", logo: "img/Tecnologias/Laravel_logo.png" },
+    { name: "Java", logo: "img/Tecnologias/java_logo.png" },
     { name: "MySql", logo: "img/Tecnologias/mysql_logo.png" },
     { name: "Tailwind Css", logo: "img/Tecnologias/tailwindCSS_logo.png" },
     { name: "Html", logo: "img/Tecnologias/html_logo.png" },
     { name: "CSS", logo: "img/Tecnologias/css_logo.png" },
     { name: "Javascript", logo: "img/Tecnologias/javascript_logo.png" },
-    { name: "AJAX", logo: "img/Tecnologias/AJAX_logo.png" },
   ];
 
   const technologiesTab = document.getElementById("tab-tecnologias");

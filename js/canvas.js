@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Reduce partículas en móviles
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 35 : 100; // 35 en móvil, 100 en desktop
-    const particleSpeed = isMobile ? 0.4 : 0.7; // Más lentas en móvil = menos CPU
+    const particleCount = isMobile ? 35 : 100; 
+    const particleSpeed = isMobile ? 0.4 : 0.7; 
 
     // Crear las partículas
     const particles = Array.from({ length: particleCount }, () => ({

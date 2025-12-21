@@ -48,6 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .type("Arquitectura escalable.")
     .pause(800)
     .delete()
+    .type("Gestión de datos y rendimiento.")
+    .pause(800)
+    .delete()
+    .type("Versátil y adaptable.")
+    .pause(800)
+    .delete()
     .go();
 
 
